@@ -170,7 +170,7 @@ export default function CreativeServices() {
 
   const [openFAQ, setOpenFAQ] = useState(null);
 
-  const toggleFAQ = (index) => {
+  const toggleFAQ = (index:any) => {
     setOpenFAQ(openFAQ === index ? null : index);
   };
 

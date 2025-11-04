@@ -3,7 +3,16 @@
 
 import { useState, useEffect, useRef } from 'react';
 
-export default function FAQSection() {
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+interface FAQSectionProps {
+  faqs?: FAQ[];
+}
+
+export default function FAQSection({ faqs: customFAQs }: FAQSectionProps) {
   const [openFAQ, setOpenFAQ] = useState<number | null>(0);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
@@ -25,7 +34,7 @@ export default function FAQSection() {
     return () => observer.disconnect();
   }, []);
 
-  const faqs = [
+  const defaultFAQs = [
     {
       question: "What services does Notus Technologies offer?",
       answer: "We provide comprehensive digital solutions including web development, mobile app development, digital marketing & SEO, cloud solutions, and custom software development. Our expert team delivers innovative technology solutions tailored to your business needs."
@@ -59,6 +68,8 @@ export default function FAQSection() {
       answer: "Yes! We work with businesses of all sizes, from startups to Fortune 500 companies. We offer scalable solutions and flexible payment plans to accommodate different budgets and growth stages."
     }
   ];
+
+  const faqs = customFAQs || defaultFAQs;
 
   // Fixed deterministic particle positions to prevent hydration mismatch
   const staticParticles = [

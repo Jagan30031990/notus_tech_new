@@ -13,11 +13,12 @@ export async function generateStaticParams() {
   ];
 }
 
-export default function BlogPostPage({ params }: { params: { id: string } }) {
+export default async function BlogPostPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
   return (
     <div className="min-h-screen">
       <Header />
-      <BlogPost postId={params.id} />
+      <BlogPost postId={id} />
       <Footer />
     </div>
   );
