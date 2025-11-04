@@ -143,7 +143,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <div className="text-sm text-gray-400">Office</div>
-                  <div>123 Tech Street, Digital City</div>
+                  <div>Gurgaon, Haryana</div>
                 </div>
               </div>
               <div className="flex items-center text-green-400">

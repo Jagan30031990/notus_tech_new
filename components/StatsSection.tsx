@@ -50,33 +50,33 @@ export default function StatsSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+    <section ref={sectionRef} className="py-12 md:py-16 lg:py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-8 md:mb-12 lg:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 md:mb-4 lg:mb-6 px-4">
             Trusted by Industry Leaders
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
             Numbers that speak to our commitment to excellence and client success
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className={`bg-white p-8 rounded-2xl shadow-lg text-center hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer ${
+              className={`bg-white p-4 md:p-6 lg:p-8 rounded-xl md:rounded-2xl shadow-lg text-center hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer ${
                 isVisible ? 'animate-slideInUp' : 'opacity-0'
               }`}
               style={{ animationDelay: `${index * 150}ms` }}
             >
-              <div className="w-16 h-16 flex items-center justify-center bg-blue-100 rounded-full mx-auto mb-6">
-                <i className={`${stat.icon} text-2xl text-blue-600`}></i>
+              <div className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-blue-100 rounded-full mx-auto mb-3 md:mb-4 lg:mb-6">
+                <i className={`${stat.icon} text-xl md:text-2xl text-blue-600`}></i>
               </div>
-              <div className="text-4xl font-bold text-gray-900 mb-2">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-1 md:mb-2">
                 {stat.number}<span className="text-blue-600">{stat.suffix}</span>
               </div>
-              <div className="text-gray-600 font-medium">{stat.label}</div>
+              <div className="text-xs sm:text-sm md:text-base text-gray-600 font-medium">{stat.label}</div>
             </div>
           ))}
         </div>

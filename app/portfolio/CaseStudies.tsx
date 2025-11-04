@@ -101,11 +101,11 @@ export default function CaseStudies() {
           ))}
         </div>
         
-        <div className="text-center mt-16">
+        {/* <div className="text-center mt-16">
           <button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-full font-semibold hover:from-blue-700 hover:to-indigo-700 hover:scale-105 transition-all duration-300 whitespace-nowrap cursor-pointer shadow-lg">
             Discuss Your Project
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -108,7 +108,7 @@ export default function MobileDevCTA() {
                       <div className="font-semibold text-gray-900">MVP Development</div>
                       <div className="text-sm text-gray-600">Basic features & core functionality</div>
                     </div>
-                    <div className="text-2xl font-bold text-blue-600">$6,000</div>
+                    {/* <div className="text-2xl font-bold text-blue-600">$6,000</div> */}
                   </div>
                   
                   <div className="flex justify-between items-center p-4 bg-indigo-50 rounded-xl">
@@ -116,7 +116,7 @@ export default function MobileDevCTA() {
                       <div className="font-semibold text-gray-900">Full-Featured App</div>
                       <div className="text-sm text-gray-600">Complete app with advanced features</div>
                     </div>
-                    <div className="text-2xl font-bold text-indigo-600">$15,000</div>
+                    {/* <div className="text-2xl font-bold text-indigo-600">$15,000</div> */}
                   </div>
                   
                   <div className="flex justify-between items-center p-4 bg-blue-50 rounded-xl">
@@ -124,7 +124,7 @@ export default function MobileDevCTA() {
                       <div className="font-semibold text-gray-900">Enterprise Solution</div>
                       <div className="text-sm text-gray-600">Custom enterprise mobile solution</div>
                     </div>
-                    <div className="text-2xl font-bold text-blue-600">Custom</div>
+                    {/* <div className="text-2xl font-bold text-blue-600">Custom</div> */}
                   </div>
                 </div>
                 

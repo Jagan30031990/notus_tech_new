@@ -9,7 +9,7 @@ export default function UIUXServices() {
       subtitle: "Understanding Your Users",
       description: "Deep dive into user behavior, needs, and pain points through comprehensive research methodologies to create detailed user personas and journey maps.",
       features: ["User Interviews & Surveys", "Persona Development", "Journey Mapping", "Competitive Analysis", "User Testing"],
-      price: "Starting at $2,500",
+      price: "",
       gradient: "from-blue-500 to-blue-600"
     },
     {
@@ -18,7 +18,7 @@ export default function UIUXServices() {
       subtitle: "Structural Foundation",
       description: "Create intuitive information architecture and detailed wireframes that ensure seamless user flow and optimal user experience.",
       features: ["Site Mapping", "User Flow Design", "Low-fi Wireframes", "High-fi Wireframes", "Interactive Prototypes"],
-      price: "Starting at $3,000",
+      price: "",
       gradient: "from-indigo-500 to-indigo-600"
     },
     {
@@ -27,7 +27,7 @@ export default function UIUXServices() {
       subtitle: "Beautiful Interfaces",
       description: "Design stunning visual interfaces that align with your brand and create memorable user experiences across all touchpoints.",
       features: ["Visual Design Systems", "Brand Integration", "Color & Typography", "Icon & Illustration", "Responsive Design"],
-      price: "Starting at $4,000",
+      price: "",
       gradient: "from-blue-400 to-indigo-500"
     },
     {
@@ -36,7 +36,7 @@ export default function UIUXServices() {
       subtitle: "Multi-Device Excellence",
       description: "Create seamless experiences across all devices with mobile-first design approach and responsive layouts.",
       features: ["Mobile-First Design", "Cross-Platform Compatibility", "Touch Interface Optimization", "Responsive Layouts", "Device Testing"],
-      price: "Starting at $3,500",
+      price: "",
       gradient: "from-indigo-600 to-blue-700"
     },
     {
@@ -45,7 +45,7 @@ export default function UIUXServices() {
       subtitle: "Validate & Iterate",
       description: "Build interactive prototypes and conduct comprehensive user testing to validate design decisions and optimize user experience.",
       features: ["Interactive Prototypes", "Usability Testing", "A/B Testing", "User Feedback Analysis", "Design Iteration"],
-      price: "Starting at $2,800",
+      price: "",
       gradient: "from-blue-600 to-indigo-700"
     },
     {
@@ -54,7 +54,7 @@ export default function UIUXServices() {
       subtitle: "Scalable Design Framework",
       description: "Develop comprehensive design systems and style guides to ensure consistency and scalability across your product.",
       features: ["Component Libraries", "Design Tokens", "Style Guidelines", "Brand Standards", "Documentation"],
-      price: "Starting at $4,500",
+      price: "",
       gradient: "from-blue-500 to-indigo-600"
     }
   ];
@@ -135,7 +135,7 @@ export default function UIUXServices() {
     {
       title: "Accessibility & Inclusive Design",
       description: "Ensuring your design is usable by all, including users with disabilities, following WCAG guidelines.",
-      icon: "ri-accessibility-line"
+      icon: "ri-user-star-line"
     }
   ];
 
@@ -184,7 +184,7 @@ export default function UIUXServices() {
       description: "We focus on clean, minimalistic designs that communicate clearly and reduce cognitive load."
     },
     {
-      icon: "ri-data-line",
+      icon: "ri-bar-chart-line",
       title: "Data-Informed",
       description: "We balance the latest trends and technologies to keep your product fresh and competitive."
     }
@@ -400,7 +400,7 @@ export default function UIUXServices() {
             Whether you need to design a new product, revamp an existing app, or enhance usability, Notus Technologies is here to transform your ideas into engaging and intuitive digital experiences.
           </p>
           <button className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300 whitespace-nowrap cursor-pointer hover:scale-105">
-            Contact us today to schedule a consultation and take your UI/UX to the next level!
+            Contact us
           </button>
         </div>
       </section>

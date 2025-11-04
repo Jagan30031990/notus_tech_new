@@ -151,11 +151,11 @@ export default function BlogGrid() {
         </div>
         
         {/* Load More Button */}
-        <div className="text-center mt-16">
+        {/* <div className="text-center mt-16">
           <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-full hover:scale-105 transition-all duration-300 cursor-pointer whitespace-nowrap">
             Load More Posts
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -22,7 +22,7 @@ export default function EcommerceServices() {
       features: ["Multiple Payment Gateways", "Secure Processing", "Fraud Protection", "Recurring Payments", "Global Currencies"]
     },
     {
-      icon: "ri-box-line",
+      icon: "ri-database-line",
       title: "Inventory Management",
       description: "Advanced inventory tracking and management systems to streamline your operations and improve efficiency.",
       features: ["Inventory Tracking", "Automatic Alerts", "Multi-location Management", "Supplier Integration", "Reporting Analytics"]

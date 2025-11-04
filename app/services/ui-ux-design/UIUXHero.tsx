@@ -2,7 +2,7 @@
 
 export default function UIUXHero() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden py-10">
       {/* Background with animated elements - matching home page colors */}
       <div 
         className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100"

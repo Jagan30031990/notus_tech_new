@@ -11,7 +11,7 @@ export default function PortfolioHero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 overflow-hidden">
+    <section className="relative min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 overflow-hidden py-10">
       {/* Enhanced background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-10 right-10 w-[500px] h-[500px] bg-gradient-to-r from-blue-400/15 to-indigo-400/15 rounded-full blur-3xl animate-pulse"></div>
@@ -99,10 +99,10 @@ export default function PortfolioHero() {
                     ))}
                   </div>
                   
-                  <button className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-2xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 whitespace-nowrap">
+                  {/* <button className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-2xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 whitespace-nowrap">
                     View Case Study
                     <i className="ri-arrow-right-line ml-2"></i>
-                  </button>
+                  </button> */}
                 </div>
                 
                 <div className="relative">
@@ -141,14 +141,14 @@ export default function PortfolioHero() {
           </div>
 
           {/* Call to action */}
-          <div className={`text-center mt-16 ${isVisible ? 'animate-slideInUp delay-1500' : 'opacity-0'}`}>
+          {/* <div className={`text-center mt-16 ${isVisible ? 'animate-slideInUp delay-1500' : 'opacity-0'}`}>
             <div className="flex items-center justify-center text-gray-500">
               <div className="w-12 h-12 border-2 border-blue-300 rounded-full flex items-center justify-center mr-4 hover:bg-blue-50 transition-colors duration-300 cursor-pointer">
                 <i className="ri-arrow-down-line animate-bounce text-blue-600"></i>
               </div>
               <span className="text-lg font-medium">Explore More Projects Below</span>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 

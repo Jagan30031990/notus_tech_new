@@ -142,20 +142,20 @@ export default function ProjectsGrid() {
                   ))}
                 </div>
                 
-                <button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold py-3 px-6 rounded-2xl hover:from-blue-700 hover:to-cyan-700 transition-all duration-300 flex items-center justify-center group shadow-lg hover:shadow-xl whitespace-nowrap cursor-pointer">
+                {/* <button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold py-3 px-6 rounded-2xl hover:from-blue-700 hover:to-cyan-700 transition-all duration-300 flex items-center justify-center group shadow-lg hover:shadow-xl whitespace-nowrap cursor-pointer">
                   View Project Details
                   <i className="ri-arrow-right-line ml-2 group-hover:translate-x-1 transition-transform duration-200"></i>
-                </button>
+                </button> */}
               </div>
             </div>
           ))}
         </div>
         
-        <div className="text-center mt-16">
+        {/* <div className="text-center mt-16">
           <button className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-12 py-4 rounded-full font-bold hover:bg-white/20 hover:scale-105 transition-all duration-300 whitespace-nowrap cursor-pointer shadow-2xl text-lg">
             Explore All Our Work
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -46,7 +46,7 @@ export default function AIAnalyticsCTA() {
               
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
                 <div className="flex items-center mb-2">
-                  <i className="ri-target-line text-white text-2xl mr-3"></i>
+                  <i className="ri-file-check-line text-white text-2xl mr-3"></i>
                   <div>
                     <div className="text-2xl font-bold text-white">95%</div>
                     <div className="text-blue-200 text-sm">Prediction Accuracy</div>
@@ -108,7 +108,7 @@ export default function AIAnalyticsCTA() {
                       <div className="font-semibold text-gray-900">AI Starter</div>
                       <div className="text-sm text-gray-600">Basic analytics + simple ML model</div>
                     </div>
-                    <div className="text-2xl font-bold text-blue-600">$5,000</div>
+                    {/* <div className="text-2xl font-bold text-blue-600">$5,000</div> */}
                   </div>
                   
                   <div className="flex justify-between items-center p-4 bg-indigo-50 rounded-xl">
@@ -116,7 +116,7 @@ export default function AIAnalyticsCTA() {
                       <div className="font-semibold text-gray-900">AI Advanced</div>
                       <div className="text-sm text-gray-600">Custom ML models + deployment</div>
                     </div>
-                    <div className="text-2xl font-bold text-indigo-600">$15,000</div>
+                    {/* <div className="text-2xl font-bold text-indigo-600">$15,000</div> */}
                   </div>
                   
                   <div className="flex justify-between items-center p-4 bg-blue-50 rounded-xl">
@@ -124,7 +124,7 @@ export default function AIAnalyticsCTA() {
                       <div className="font-semibold text-gray-900">AI Enterprise</div>
                       <div className="text-sm text-gray-600">Full AI transformation + ongoing support</div>
                     </div>
-                    <div className="text-2xl font-bold text-blue-600">Custom</div>
+                    {/* <div className="text-2xl font-bold text-blue-600">Custom</div> */}
                   </div>
                 </div>
                 

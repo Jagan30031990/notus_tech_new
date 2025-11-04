@@ -13,7 +13,7 @@ export default function GetQuotePage() {
       <Header />
       <GetQuoteHero />
       <QuoteForm />
-      <ServicePackages />
+      {/* <ServicePackages /> */}
       <QuoteTestimonials />
       <Footer />
     </div>

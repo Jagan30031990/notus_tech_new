@@ -2,7 +2,7 @@
 
 export default function MobileDevHero() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden py-10">
       {/* Background with animated elements - matching home page colors */}
       <div 
         className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100"
@@ -80,10 +80,10 @@ export default function MobileDevHero() {
             </div>
             
             {/* Right Content - Mobile App Preview */}
-            <div className="relative">
-              <div className="flex justify-center items-center space-x-8">
+            {/* <div className="relative">
+              <div className="flex justify-center items-center space-x-8"> */}
                 {/* iPhone mockup */}
-                <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-3xl p-2 shadow-2xl transform hover:scale-105 transition-all duration-300">
+                {/* <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-3xl p-2 shadow-2xl transform hover:scale-105 transition-all duration-300">
                   <div className="bg-white rounded-2xl w-64 h-128 overflow-hidden relative">
                     <div className="bg-gradient-to-br from-blue-500 to-indigo-600 h-full flex flex-col items-center justify-center p-6">
                       <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-4">
@@ -93,10 +93,10 @@ export default function MobileDevHero() {
                       <p className="text-white/80 text-sm text-center">Native iOS Development</p>
                     </div>
                   </div>
-                </div>
+                </div> */}
                 
                 {/* Android mockup */}
-                <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-3xl p-2 shadow-2xl transform hover:scale-105 transition-all duration-300">
+                {/* <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-3xl p-2 shadow-2xl transform hover:scale-105 transition-all duration-300">
                   <div className="bg-white rounded-2xl w-64 h-128 overflow-hidden relative">
                     <div className="bg-gradient-to-br from-indigo-500 to-blue-600 h-full flex flex-col items-center justify-center p-6">
                       <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-4">
@@ -106,9 +106,9 @@ export default function MobileDevHero() {
                       <p className="text-white/80 text-sm text-center">Native Android Development</p>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
+                </div> */}
+              {/* </div>
+            </div> */}
           </div>
         </div>
       </div>

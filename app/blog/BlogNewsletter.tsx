@@ -43,7 +43,7 @@ export default function BlogNewsletter() {
                 No spam, ever
               </div>
               <div className="flex items-center">
-                <i className="ri-mail-unsubscribe-line text-blue-500 mr-2"></i>
+                <i className="ri-logout-box-line text-blue-500 mr-2"></i>
                 Unsubscribe anytime
               </div>
             </div>

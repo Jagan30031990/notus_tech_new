@@ -108,7 +108,7 @@ export default function DigitalMarketingCTA() {
                       <div className="font-semibold text-gray-900">Starter Package</div>
                       <div className="text-sm text-gray-600">SEO + Social Media + Email Marketing</div>
                     </div>
-                    <div className="text-2xl font-bold text-blue-600">$2,500/mo</div>
+                    {/* <div className="text-2xl font-bold text-blue-600">$2,500/mo</div> */}
                   </div>
                   
                   <div className="flex justify-between items-center p-4 bg-indigo-50 rounded-xl">
@@ -116,7 +116,7 @@ export default function DigitalMarketingCTA() {
                       <div className="font-semibold text-gray-900">Growth Package</div>
                       <div className="text-sm text-gray-600">Full marketing stack + PPC + Content</div>
                     </div>
-                    <div className="text-2xl font-bold text-indigo-600">$5,000/mo</div>
+                    {/* <div className="text-2xl font-bold text-indigo-600">$5,000/mo</div> */}
                   </div>
                   
                   <div className="flex justify-between items-center p-4 bg-blue-50 rounded-xl">
@@ -124,7 +124,7 @@ export default function DigitalMarketingCTA() {
                       <div className="font-semibold text-gray-900">Enterprise Package</div>
                       <div className="text-sm text-gray-600">Custom marketing solution + dedicated team</div>
                     </div>
-                    <div className="text-2xl font-bold text-blue-600">Custom</div>
+                    {/* <div className="text-2xl font-bold text-blue-600">Custom</div> */}
                   </div>
                 </div>
                 

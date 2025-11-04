@@ -9,7 +9,7 @@ export default function WebDevServices() {
       subtitle: "Tailored Solutions",
       description: "We develop state-of-the-art websites in more than just a digital presence – it's your brand's impression, a powerful tool that engages customers and drives business growth.",
       features: ["Modern HTML & CSS3", "Responsive Design", "Cross-browser Compatibility", "SEO-Friendly Structure", "Performance Optimized"],
-      price: "Starting at $2,500",
+      price: "",
       gradient: "from-blue-500 to-blue-600"
     },
     {
@@ -18,7 +18,7 @@ export default function WebDevServices() {
       subtitle: "Native & Cross-Platform",
       description: "Whether seeking a sleek, HTML5 enterprise, or robust app with development services to meet your business demands and objectives.",
       features: ["iOS & Android Apps", "React Native", "Flutter Development", "App Store Optimization", "Push Notifications"],
-      price: "Starting at $5,000",
+      price: "",
       gradient: "from-indigo-500 to-indigo-600"
     },
     {
@@ -27,7 +27,7 @@ export default function WebDevServices() {
       subtitle: "Complete Online Stores",
       description: "We develop secure, scalable, and user-focused e-commerce platforms that provide a seamless shopping experience from product discovery to purchase.",
       features: ["Shopify Development", "WooCommerce", "Payment Gateway Integration", "Inventory Management", "Order Tracking"],
-      price: "Starting at $4,500",
+      price: "",
       gradient: "from-blue-400 to-indigo-500"
     },
     {
@@ -36,7 +36,7 @@ export default function WebDevServices() {
       subtitle: "Easy Content Updates",
       description: "Our website development team makes it easy for you to manage and update your content with user-friendly CMS that streamlines your content updates.",
       features: ["WordPress Development", "Custom CMS", "Content Optimization", "User Role Management", "SEO Tools Integration"],
-      price: "Starting at $3,000",
+      price: "",
       gradient: "from-indigo-600 to-blue-700"
     },
     {
@@ -45,7 +45,7 @@ export default function WebDevServices() {
       subtitle: "Results-Driven Approach",
       description: "We deliver fast-loading, high-converting websites with advanced SEO fundamentals and conversion optimization for the best possible results.",
       features: ["Technical SEO", "Page Speed Optimization", "Conversion Rate Optimization", "Analytics Integration", "Schema Markup"],
-      price: "Starting at $2,000",
+      price: "",
       gradient: "from-blue-600 to-indigo-700"
     },
     {
@@ -54,7 +54,7 @@ export default function WebDevServices() {
       subtitle: "Ongoing Maintenance",
       description: "Keep your website secure, updated, and performing optimally with comprehensive maintenance, monitoring, and optimization services.",
       features: ["Security Updates", "Performance Monitoring", "Content Updates", "Backup Management", "24/7 Support"],
-      price: "Starting at $500/month",
+      price: "",
       gradient: "from-blue-500 to-indigo-600"
     }
   ];
@@ -66,7 +66,7 @@ export default function WebDevServices() {
       description: "We understand the importance of fast-loading websites - slow sites create an bad user experience and high bounce rates."
     },
     {
-      icon: "ri-responsive-line", 
+      icon: "ri-phone-line", 
       title: "Fully Responsive Design",
       description: "Our websites look and work wonderfully across all devices (desktops, laptops, tablets, and phones)."
     },
@@ -260,9 +260,9 @@ export default function WebDevServices() {
                     </div>
                   </div>
                   
-                  <button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 whitespace-nowrap cursor-pointer">
+                  {/* <button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 whitespace-nowrap cursor-pointer">
                     Get Started
-                  </button>
+                  </button> */}
                 </div>
               </div>
             ))}

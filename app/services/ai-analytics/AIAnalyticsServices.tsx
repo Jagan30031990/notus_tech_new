@@ -8,7 +8,7 @@ export default function AIAnalyticsServices() {
       subtitle: "Predictive Intelligence",
       description: "Build custom ML models that predict outcomes, optimize processes, and automate decision-making.",
       features: ["Predictive Modeling", "Classification", "Regression Analysis", "Deep Learning", "Model Deployment"],
-      price: "Starting at $8,000",
+      price: "",
       gradient: "from-blue-500 to-blue-600"
     },
     {
@@ -17,7 +17,7 @@ export default function AIAnalyticsServices() {
       subtitle: "Data-Driven Insights",
       description: "Transform raw data into actionable insights with advanced analytics and interactive dashboards.",
       features: ["Data Visualization", "Interactive Dashboards", "KPI Tracking", "Reporting Automation", "Real-time Analytics"],
-      price: "Starting at $5,000",
+      price: "",
       gradient: "from-indigo-500 to-indigo-600"
     },
     {
@@ -26,7 +26,7 @@ export default function AIAnalyticsServices() {
       subtitle: "Visual Intelligence",
       description: "Implement AI systems that can analyze, understand, and process visual information from images and videos.",
       features: ["Image Recognition", "Object Detection", "Facial Recognition", "Quality Control", "Medical Imaging"],
-      price: "Starting at $10,000",
+      price: "",
       gradient: "from-blue-400 to-indigo-500"
     },
     {
@@ -35,7 +35,7 @@ export default function AIAnalyticsServices() {
       subtitle: "Text Understanding",
       description: "Build intelligent systems that understand, interpret, and generate human language.",
       features: ["Sentiment Analysis", "Chatbots", "Text Classification", "Language Translation", "Content Generation"],
-      price: "Starting at $7,000",
+      price: "",
       gradient: "from-indigo-600 to-blue-700"
     },
     {
@@ -44,7 +44,7 @@ export default function AIAnalyticsServices() {
       subtitle: "Intelligent Automation",
       description: "Automate complex business processes using AI to improve efficiency and reduce manual work.",
       features: ["RPA Implementation", "Workflow Automation", "Document Processing", "Smart Routing", "Exception Handling"],
-      price: "Starting at $6,000",
+      price: "",
       gradient: "from-blue-600 to-indigo-700"
     },
     {
@@ -53,7 +53,7 @@ export default function AIAnalyticsServices() {
       subtitle: "Future Insights",
       description: "Forecast trends, identify patterns, and predict future outcomes to make proactive business decisions.",
       features: ["Trend Analysis", "Forecasting", "Risk Assessment", "Customer Behavior", "Market Prediction"],
-      price: "Starting at $5,500",
+      price: "",
       gradient: "from-blue-500 to-indigo-600"
     }
   ];

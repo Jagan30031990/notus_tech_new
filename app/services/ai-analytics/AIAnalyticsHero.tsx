@@ -2,7 +2,7 @@
 
 export default function AIAnalyticsHero() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden py-10">
       {/* Background with animated elements - matching home page colors */}
       <div 
         className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100"
@@ -43,7 +43,7 @@ export default function AIAnalyticsHero() {
               
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
                 Unlock Data
-                <span className="block bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 bg-clip-text text-transparent">
+                <span className="block leading-[70px] md:leading-[100px] bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 bg-clip-text text-transparent">
                   Intelligence
                 </span>
               </h1>

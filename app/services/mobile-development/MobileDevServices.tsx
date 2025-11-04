@@ -9,7 +9,7 @@ export default function MobileDevServices() {
       subtitle: "Swift & Objective-C",
       description: "Build high-performance native iOS apps for iPhones, iPads and Apple Watch. Our apps are built using Swift and Objective-C to deliver exceptional performance and user experience.",
       features: ["Swift Programming", "iOS SDK", "Xcode Development", "App Store Optimization", "TestFlight Beta Testing"],
-      price: "Starting at $8,000",
+      price: "",
       gradient: "from-blue-500 to-blue-600"
     },
     {
@@ -18,7 +18,7 @@ export default function MobileDevServices() {
       subtitle: "Kotlin & Java",
       description: "Create powerful Android applications using modern Kotlin and Java for seamless performance across all Android devices, smartphones, and tablets.",
       features: ["Kotlin Programming", "Android Studio", "Material Design", "Google Play Optimization", "Firebase Integration"],
-      price: "Starting at $7,500",
+      price: "",
       gradient: "from-indigo-500 to-indigo-600"
     },
     {
@@ -27,7 +27,7 @@ export default function MobileDevServices() {
       subtitle: "React Native & Flutter",
       description: "We have frameworks like Flutter, React Native, and Xamarin to develop apps that run seamlessly across iOS and Android, saving time to market and reducing development cost and complication.",
       features: ["React Native", "Flutter Development", "Xamarin", "Shared Codebase", "Platform Optimization"],
-      price: "Starting at $6,000",
+      price: "",
       gradient: "from-blue-400 to-indigo-500"
     },
     {
@@ -36,7 +36,7 @@ export default function MobileDevServices() {
       subtitle: "User-Centered Design",
       description: "Our experienced creative team at Dreamidus is based around multiple devices, platforms, and user experience optimization for your mobile application.",
       features: ["Mobile UI Design", "User Experience Design", "Prototyping", "Usability Testing", "Design Systems"],
-      price: "Starting at $3,500",
+      price: "",
       gradient: "from-indigo-600 to-blue-700"
     },
     {
@@ -45,7 +45,7 @@ export default function MobileDevServices() {
       subtitle: "Comprehensive Testing",
       description: "Our QA engineers ensure your app is functional tested across multiple devices, platforms, and operating systems with comprehensive quality assurance.",
       features: ["Manual & Automated Testing", "Performance & Stress Testing", "Usability & Accessibility Checks", "Security & Compliance Audits"],
-      price: "Starting at $2,500",
+      price: "",
       gradient: "from-blue-600 to-indigo-700"
     },
     {
@@ -54,7 +54,7 @@ export default function MobileDevServices() {
       subtitle: "Ongoing Support",
       description: "We provide continuous maintenance post-launch, including regular bug fixes & security patches, OS & device compatibility updates, performance optimization, and new feature rollouts.",
       features: ["24/7 monitoring and support plans", "Regular Bug Fixes", "Security Updates", "Performance Optimization", "Feature Enhancements"],
-      price: "Starting at $800/month",
+      price: "",
       gradient: "from-blue-500 to-indigo-600"
     }
   ];

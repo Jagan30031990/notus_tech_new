@@ -117,12 +117,12 @@ export default function ServicesSection() {
   };
 
   return (
-    <section ref={sectionRef} className="py-28 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/30 relative overflow-hidden">
+    <section ref={sectionRef} className="py-12 md:py-20 lg:py-28 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/30 relative overflow-hidden">
       {/* Enhanced background elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-40 left-40 w-96 h-96 bg-gradient-to-r from-blue-400/10 to-indigo-400/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-40 right-40 w-80 h-80 bg-gradient-to-r from-cyan-400/10 to-blue-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '3s' }}></div>
-        <div className="absolute top-1/2 left-1/2 w-72 h-72 bg-gradient-to-r from-indigo-300/8 to-blue-300/8 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+        <div className="absolute top-40 left-40 w-48 h-48 md:w-72 md:h-72 lg:w-96 lg:h-96 bg-gradient-to-r from-blue-400/10 to-indigo-400/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-40 right-40 w-40 h-40 md:w-60 md:h-60 lg:w-80 lg:h-80 bg-gradient-to-r from-cyan-400/10 to-blue-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '3s' }}></div>
+        <div className="absolute top-1/2 left-1/2 w-48 h-48 md:w-60 md:h-60 lg:w-72 lg:h-72 bg-gradient-to-r from-indigo-300/8 to-blue-300/8 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }}></div>
       </div>
 
       {/* Deterministic floating geometric shapes */}
@@ -141,31 +141,31 @@ export default function ServicesSection() {
         ))}
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
         {/* Enhanced section header */}
-        <div className="text-center mb-24">
-          <div className={`inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-100 to-indigo-100 border border-blue-200 text-blue-700 rounded-full text-sm font-semibold mb-8 transition-all duration-1000 hover:scale-105 cursor-pointer ${isVisible ? 'animate-slideInDown' : 'opacity-0'}`}>
-            <i className="ri-service-line mr-3 text-lg"></i>
+        <div className="text-center mb-12 md:mb-16 lg:mb-24">
+          <div className={`inline-flex items-center px-4 py-2 md:px-6 md:py-3 lg:px-8 lg:py-4 bg-gradient-to-r from-blue-100 to-indigo-100 border border-blue-200 text-blue-700 rounded-full text-xs sm:text-sm font-semibold mb-6 md:mb-8 transition-all duration-1000 hover:scale-105 cursor-pointer ${isVisible ? 'animate-slideInDown' : 'opacity-0'}`}>
+            <i className="ri-service-line mr-2 md:mr-3 text-base md:text-lg"></i>
             Comprehensive Solutions
-            <div className="w-3 h-3 bg-blue-500 rounded-full ml-3 animate-pulse"></div>
+            <div className="w-2 h-2 md:w-3 md:h-3 bg-blue-500 rounded-full ml-2 md:ml-3 animate-pulse"></div>
           </div>
-          <h2 className={`text-5xl md:text-7xl font-bold text-gray-900 mb-8 transition-all duration-1000 delay-300 ${isVisible ? 'animate-slideInUp' : 'opacity-0'}`}>
+          <h2 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-4 md:mb-6 lg:mb-8 px-4 transition-all duration-1000 delay-300 ${isVisible ? 'animate-slideInUp' : 'opacity-0'}`}>
             <span className="bg-gradient-to-r from-blue-700 via-indigo-700 to-blue-800 bg-clip-text text-transparent">
               Our Services
             </span>
           </h2>
-          <p className={`text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed transition-all duration-1000 delay-500 ${isVisible ? 'animate-slideInUp' : 'opacity-0'}`}>
+          <p className={`text-base sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed px-4 transition-all duration-1000 delay-500 ${isVisible ? 'animate-slideInUp' : 'opacity-0'}`}>
             We deliver innovative solutions that transform your business through cutting-edge technology, strategic expertise, and exceptional results.
           </p>
         </div>
 
         {/* Enhanced services grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10 mb-12 md:mb-16">
           {services.map((service, index) => (
             <div 
               key={index} 
-              className={`group relative bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-700 overflow-hidden border border-blue-100 cursor-pointer transform hover:scale-105 ${
-                activeService === index ? 'ring-4 ring-blue-300 ring-offset-4 scale-105' : ''
+              className={`group relative bg-white rounded-2xl md:rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-700 overflow-hidden border border-blue-100 cursor-pointer transform hover:scale-105 ${
+                activeService === index ? 'ring-4 ring-blue-300 ring-offset-2 md:ring-offset-4 scale-105' : ''
               } ${isVisible ? 'animate-slideInUp' : 'opacity-0'}`}
               style={{ 
                 animationDelay: `${0.8 + index * 0.2}s`,
@@ -179,7 +179,7 @@ export default function ServicesSection() {
               <div className={`absolute inset-0 bg-gradient-to-br ${service.bgColor} opacity-0 group-hover:opacity-90 transition-all duration-500`}></div>
               
               {/* Enhanced service image */}
-              <div className="relative h-72 overflow-hidden">
+              <div className="relative h-48 sm:h-56 md:h-64 lg:h-72 overflow-hidden">
                 <img 
                   src={service.image} 
                   alt={service.title}
@@ -188,39 +188,39 @@ export default function ServicesSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/70 via-transparent to-blue-900/30 group-hover:from-blue-900/80 transition-all duration-500"></div>
                 
                 {/* Enhanced service icon */}
-                <div className={`absolute top-6 left-6 w-16 h-16 flex items-center justify-center bg-gradient-to-r ${service.color} rounded-2xl shadow-lg group-hover:scale-125 group-hover:rotate-12 transition-all duration-500`}>
-                  <i className={`${service.icon} text-2xl text-white group-hover:animate-bounce`}></i>
+                <div className={`absolute top-4 left-4 md:top-6 md:left-6 w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-gradient-to-r ${service.color} rounded-xl md:rounded-2xl shadow-lg group-hover:scale-125 group-hover:rotate-12 transition-all duration-500`}>
+                  <i className={`${service.icon} text-xl md:text-2xl text-white group-hover:animate-bounce`}></i>
                 </div>
 
                 {/* Pricing badge */}
-                <div className="absolute top-6 right-6 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 border border-blue-200 group-hover:scale-110 transition-all duration-300">
-                  <div className="text-blue-600 font-bold text-sm">{service.price}</div>
+                <div className="absolute top-4 right-4 md:top-6 md:right-6 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1.5 md:px-4 md:py-2 border border-blue-200 group-hover:scale-110 transition-all duration-300">
+                  <div className="text-blue-600 font-bold text-xs md:text-sm">{service.price}</div>
                 </div>
 
                 {/* Duration indicator */}
-                <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 border border-blue-200 group-hover:scale-110 transition-all duration-300">
-                  <div className="text-blue-600 font-medium text-sm">{service.duration}</div>
+                <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1.5 md:px-4 md:py-2 border border-blue-200 group-hover:scale-110 transition-all duration-300">
+                  <div className="text-blue-600 font-medium text-xs md:text-sm">{service.duration}</div>
                 </div>
               </div>
               
               {/* Enhanced content */}
-              <div className="p-10 relative z-10">
-                <h3 className="text-2xl font-bold text-gray-900 mb-5 group-hover:text-blue-600 transition-all duration-300 leading-tight">
+              <div className="p-6 md:p-8 lg:p-10 relative z-10">
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4 lg:mb-5 group-hover:text-blue-600 transition-all duration-300 leading-tight">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 mb-8 leading-relaxed text-lg group-hover:text-gray-800 transition-colors duration-300">
+                <p className="text-gray-600 mb-4 md:mb-6 lg:mb-8 leading-relaxed text-base md:text-lg group-hover:text-gray-800 transition-colors duration-300">
                   {service.description}
                 </p>
                 
                 {/* Enhanced features list */}
-                <div className="grid grid-cols-2 gap-4 mb-8">
+                <div className="grid grid-cols-2 gap-3 md:gap-4 mb-4 md:mb-6 lg:mb-8">
                   {service.features.map((feature, featureIndex) => (
                     <div 
                       key={featureIndex} 
                       className="flex items-center group/feature hover:scale-105 transition-transform duration-300"
                     >
-                      <div className={`w-3 h-3 bg-gradient-to-r ${service.color} rounded-full mr-3 group-hover:animate-pulse`}></div>
-                      <span className="text-gray-700 text-sm font-medium group-hover:text-blue-600 transition-colors duration-300">{feature}</span>
+                      <div className={`w-2 h-2 md:w-3 md:h-3 bg-gradient-to-r ${service.color} rounded-full mr-2 md:mr-3 group-hover:animate-pulse`}></div>
+                      <span className="text-gray-700 text-xs md:text-sm font-medium group-hover:text-blue-600 transition-colors duration-300">{feature}</span>
                     </div>
                   ))}
                 </div>
@@ -228,7 +228,7 @@ export default function ServicesSection() {
                 {/* Enhanced CTA button with link */}
                 <Link 
                   href={service.link}
-                  className={`block w-full bg-gradient-to-r ${service.color} text-white py-4 rounded-2xl font-semibold transition-all duration-500 cursor-pointer whitespace-nowrap hover:shadow-2xl hover:scale-105 relative overflow-hidden text-center`}
+                  className={`block w-full bg-gradient-to-r ${service.color} text-white py-3 md:py-4 rounded-xl md:rounded-2xl font-semibold transition-all duration-500 cursor-pointer whitespace-nowrap hover:shadow-2xl hover:scale-105 relative overflow-hidden text-center text-sm md:text-base`}
                 >
                   <span className="relative z-10 flex items-center justify-center">
                     <span className="group-hover:mr-2 transition-all duration-300">Learn More</span>
@@ -242,28 +242,28 @@ export default function ServicesSection() {
         </div>
 
         {/* Additional Services Row */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-12 md:mb-16 lg:mb-20">
           {additionalServices.map((service, index) => (
             <Link
               key={index}
               href={service.link}
-              className={`group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 border border-blue-100 hover:border-blue-200 cursor-pointer hover:scale-105 ${isVisible ? 'animate-slideInUp' : 'opacity-0'}`}
+              className={`group bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-500 border border-blue-100 hover:border-blue-200 cursor-pointer hover:scale-105 ${isVisible ? 'animate-slideInUp' : 'opacity-0'}`}
               style={{ animationDelay: `${1.6 + index * 0.2}s` }}
             >
-              <div className="flex items-center mb-6">
-                <div className={`w-16 h-16 flex items-center justify-center bg-gradient-to-r ${service.color} rounded-2xl mr-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
-                  <i className={`${service.icon} text-2xl text-white`}></i>
+              <div className="flex items-center mb-4 md:mb-6">
+                <div className={`w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 flex items-center justify-center bg-gradient-to-r ${service.color} rounded-xl md:rounded-2xl mr-4 md:mr-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
+                  <i className={`${service.icon} text-xl md:text-2xl text-white`}></i>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+                  <h3 className="text-lg md:text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
                     {service.title}
                   </h3>
                 </div>
               </div>
-              <p className="text-gray-600 leading-relaxed mb-6 group-hover:text-gray-800 transition-colors duration-300">
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed mb-4 md:mb-6 group-hover:text-gray-800 transition-colors duration-300">
                 {service.description}
               </p>
-              <div className="flex items-center text-blue-600 font-semibold group-hover:translate-x-2 transition-all duration-300">
+              <div className="flex items-center text-blue-600 font-semibold text-sm md:text-base group-hover:translate-x-2 transition-all duration-300">
                 Explore Service
                 <i className="ri-arrow-right-line ml-2"></i>
               </div>
@@ -273,46 +273,46 @@ export default function ServicesSection() {
 
         {/* Enhanced bottom CTA section */}
         <div className={`text-center transition-all duration-1000 delay-1200 ${isVisible ? 'animate-slideInUp' : 'opacity-0'}`}>
-          <div className="bg-gradient-to-br from-blue-900 via-indigo-900 to-blue-800 rounded-3xl p-16 relative overflow-hidden group hover:scale-105 transition-all duration-500 cursor-pointer">
+          <div className="bg-gradient-to-br from-blue-400 via-indigo-400 to-blue-500 rounded-2xl md:rounded-3xl p-6 md:p-10 lg:p-16 relative overflow-hidden group hover:scale-105 transition-all duration-500 cursor-pointer">
             {/* Enhanced background elements */}
             <div className="absolute inset-0">
-              <div className="absolute top-20 left-20 w-40 h-40 bg-blue-400/10 rounded-full blur-2xl animate-pulse"></div>
-              <div className="absolute bottom-20 right-20 w-32 h-32 bg-indigo-400/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
-              <div className="absolute top-1/2 left-1/2 w-36 h-36 bg-cyan-400/10 rounded-full blur-2xl animate-pulse delay-2000"></div>
+              <div className="absolute top-20 left-20 w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 bg-blue-400/10 rounded-full blur-2xl animate-pulse"></div>
+              <div className="absolute bottom-20 right-20 w-20 h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 bg-indigo-400/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
+              <div className="absolute top-1/2 left-1/2 w-24 h-24 md:w-28 md:h-28 lg:w-36 lg:h-36 bg-cyan-400/10 rounded-full blur-2xl animate-pulse delay-2000"></div>
             </div>
 
             <div className="relative z-10">
-              <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-8 group-hover:scale-110 transition-all duration-300">
-                <i className="ri-star-line text-yellow-400 mr-2 animate-pulse"></i>
-                <span className="text-white text-sm font-medium">Ready to Transform Your Business?</span>
+              <div className="inline-flex items-center px-4 py-2 md:px-6 md:py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-4 md:mb-6 lg:mb-8 group-hover:scale-110 transition-all duration-300">
+                <i className="ri-star-line text-yellow-400 mr-2 animate-pulse text-sm md:text-base"></i>
+                <span className="text-white text-xs sm:text-sm font-medium">Ready to Transform Your Business?</span>
               </div>
               
-              <h3 className="text-4xl md:text-6xl font-bold text-white mb-8 group-hover:scale-105 transition-transform duration-300">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 md:mb-6 lg:mb-8 px-4 group-hover:scale-105 transition-transform duration-300">
                 <span className="bg-gradient-to-r from-white via-blue-200 to-indigo-200 bg-clip-text text-transparent">
                   Let's Build Something Amazing
                 </span>
               </h3>
-              <p className="text-xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-blue-100 mb-6 md:mb-8 lg:mb-12 max-w-4xl mx-auto leading-relaxed px-4">
                 Join 500+ successful businesses that trust us for their digital transformation. Start your project today and see the difference.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center px-4">
                 <Link
                   href="/contact"
-                  className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-10 py-5 rounded-2xl font-semibold text-lg transition-all duration-300 cursor-pointer whitespace-nowrap hover:shadow-2xl hover:scale-110 group/btn relative overflow-hidden"
+                  className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-6 py-3 md:px-8 md:py-4 lg:px-10 lg:py-5 rounded-xl md:rounded-2xl font-semibold text-base md:text-lg transition-all duration-300 cursor-pointer whitespace-nowrap hover:shadow-2xl hover:scale-110 group/btn relative overflow-hidden"
                 >
                   <span className="relative z-10 flex items-center justify-center">
-                    <i className="ri-rocket-line mr-3 group/btn-hover:animate-bounce"></i>
+                    <i className="ri-rocket-line mr-2 md:mr-3 group/btn-hover:animate-bounce"></i>
                     Start Your Project
                   </span>
                   <div className="absolute inset-0 bg-white/10 transform translate-x-full group/btn-hover:translate-x-0 transition-transform duration-500"></div>
                 </Link>
                 <Link
                   href="/services"
-                  className="border-2 border-white/40 text-white px-10 py-5 rounded-2xl font-semibold text-lg transition-all duration-300 cursor-pointer whitespace-nowrap hover:bg-white/10 hover:scale-110 backdrop-blur-sm"
+                  className="border-2 border-white/40 text-white px-6 py-3 md:px-8 md:py-4 lg:px-10 lg:py-5 rounded-xl md:rounded-2xl font-semibold text-base md:text-lg transition-all duration-300 cursor-pointer whitespace-nowrap hover:bg-white/10 hover:scale-110 backdrop-blur-sm"
                 >
                   <span className="flex items-center justify-center">
-                    <i className="ri-eye-line mr-3"></i>
+                    <i className="ri-eye-line mr-2 md:mr-3"></i>
                     View All Services
                   </span>
                 </Link>

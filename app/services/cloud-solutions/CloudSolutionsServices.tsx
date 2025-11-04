@@ -8,7 +8,7 @@ export default function CloudSolutionsServices() {
       subtitle: "Seamless Transition",
       description: "Migrate your applications and data to the cloud with zero downtime and improved performance.",
       features: ["Migration Planning", "Data Transfer", "Application Modernization", "Testing & Validation", "Go-Live Support"],
-      price: "Starting at $5,000",
+      price: "",
       gradient: "from-blue-500 to-blue-600"
     },
     {
@@ -17,7 +17,7 @@ export default function CloudSolutionsServices() {
       subtitle: "Automated Provisioning",
       description: "Deploy and manage cloud infrastructure using code for consistency, scalability, and version control.",
       features: ["Terraform", "CloudFormation", "Automated Deployment", "Version Control", "Infrastructure Templates"],
-      price: "Starting at $3,500",
+      price: "",
       gradient: "from-indigo-500 to-indigo-600"
     },
     {
@@ -26,7 +26,7 @@ export default function CloudSolutionsServices() {
       subtitle: "Enterprise-Grade Protection",
       description: "Implement comprehensive security measures to protect your cloud infrastructure and applications.",
       features: ["Security Assessment", "Access Management", "Encryption", "Compliance", "Monitoring"],
-      price: "Starting at $4,000",
+      price: "",
       gradient: "from-blue-400 to-indigo-500"
     },
     {
@@ -35,7 +35,7 @@ export default function CloudSolutionsServices() {
       subtitle: "CI/CD Pipelines",
       description: "Streamline your development process with automated testing, deployment, and monitoring pipelines.",
       features: ["CI/CD Setup", "Automated Testing", "Deployment Automation", "Monitoring", "Performance Optimization"],
-      price: "Starting at $4,500",
+      price: "",
       gradient: "from-indigo-600 to-blue-700"
     },
     {
@@ -44,7 +44,7 @@ export default function CloudSolutionsServices() {
       subtitle: "24/7 Oversight",
       description: "Monitor your cloud infrastructure and applications with real-time alerts and comprehensive dashboards.",
       features: ["Real-time Monitoring", "Custom Dashboards", "Alert Management", "Performance Analytics", "Cost Optimization"],
-      price: "Starting at $2,000/month",
+      price: "",
       gradient: "from-blue-600 to-indigo-700"
     },
     {
@@ -53,7 +53,7 @@ export default function CloudSolutionsServices() {
       subtitle: "Ongoing Support",
       description: "Let our experts manage your cloud infrastructure so you can focus on your core business.",
       features: ["24/7 Support", "Maintenance", "Updates & Patches", "Backup Management", "Disaster Recovery"],
-      price: "Starting at $3,000/month",
+      price: "",
       gradient: "from-blue-500 to-indigo-600"
     }
   ];

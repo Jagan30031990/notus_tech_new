@@ -91,7 +91,7 @@ function UIUXFAQSection() {
             <h3 className="text-3xl font-bold mb-4">Still Have Questions About UI/UX Design?</h3>
             <p className="text-xl text-blue-100 mb-8">Get personalized answers and start your design project with a free consultation</p>
             <button className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300 whitespace-nowrap cursor-pointer hover:scale-105">
-              Schedule Free UI/UX Consultation
+              Schedule
             </button>
           </div>
         </div>

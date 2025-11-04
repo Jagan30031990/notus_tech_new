@@ -249,8 +249,8 @@ export default function CTASection() {
                   className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-12 py-6 rounded-2xl font-semibold text-xl transition-all duration-500 cursor-pointer whitespace-nowrap hover:shadow-2xl hover:scale-110 group/btn relative overflow-hidden"
                 >
                   <span className="relative z-10 flex items-center justify-center">
-                    <i className="ri-rocket-line mr-4 text-2xl group/btn:hover:animate-bounce"></i>
-                    Start Your Project Now
+                    <i className="ri-rocket-line mr-4 text-xl md:text-2xl group/btn:hover:animate-bounce"></i>
+                    <span className="text-base md:text-xl">Start Your Project Now</span>
                   </span>
                   <div className="absolute inset-0 bg-white/10 transform translate-x-full group/btn:hover:translate-x-0 transition-transform duration-500"></div>
                 </Link>

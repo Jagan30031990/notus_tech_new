@@ -68,34 +68,34 @@ export default function TeamSection() {
   ];
 
   return (
-    <section id="team-section" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="team-section" className="py-12 md:py-16 lg:py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section Header - matching home page colors */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-100 to-indigo-100 rounded-full border border-blue-200 mb-6">
+        <div className="text-center mb-10 md:mb-14 lg:mb-16">
+          <div className="inline-flex items-center px-3 py-1.5 md:px-4 md:py-2 bg-gradient-to-r from-blue-100 to-indigo-100 rounded-full border border-blue-200 mb-4 md:mb-6">
             <div className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></div>
-            <span className="text-sm font-medium text-blue-700">Our People</span>
+            <span className="text-xs sm:text-sm font-medium text-blue-700">Our People</span>
           </div>
           
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-4 md:mb-6 px-4">
             Meet Our Team
           </h2>
           
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
             A dedicated team of experts passionate about creating exceptional digital experiences
           </p>
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {teamMembers.map((member, index) => (
             <div 
               key={member.name}
-              className={`group ${member.color === 'blue' ? 'bg-blue-50 hover:bg-blue-100/50 hover:border-blue-200' : 'bg-indigo-50 hover:bg-indigo-100/50 hover:border-indigo-200'} border border-gray-100 p-8 rounded-2xl text-center hover:shadow-lg transition-all duration-300 ${isVisible ? 'animate-slideInUp' : 'opacity-0'}`}
+              className={`group ${member.color === 'blue' ? 'bg-blue-50 hover:bg-blue-100/50 hover:border-blue-200' : 'bg-indigo-50 hover:bg-indigo-100/50 hover:border-indigo-200'} border border-gray-100 p-6 md:p-8 rounded-xl md:rounded-2xl text-center hover:shadow-lg transition-all duration-300 ${isVisible ? 'animate-slideInUp' : 'opacity-0'}`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Profile Image */}
-              <div className="relative w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden ring-4 ring-white shadow-lg group-hover:scale-110 transition-transform">
+              <div className="relative w-20 h-20 md:w-24 md:h-24 mx-auto mb-4 md:mb-6 rounded-full overflow-hidden ring-4 ring-white shadow-lg group-hover:scale-110 transition-transform">
                 <img 
                   src={member.image}
                   alt={member.name}
@@ -104,23 +104,23 @@ export default function TeamSection() {
               </div>
               
               {/* Member Info */}
-              <h3 className="text-xl font-bold text-gray-800 mb-2">{member.name}</h3>
-              <p className={`font-semibold mb-4 ${member.color === 'blue' ? 'text-blue-600' : 'text-indigo-600'}`}>
+              <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-1 md:mb-2">{member.name}</h3>
+              <p className={`font-semibold mb-3 md:mb-4 text-sm md:text-base ${member.color === 'blue' ? 'text-blue-600' : 'text-indigo-600'}`}>
                 {member.role}
               </p>
-              <p className="text-gray-600 text-sm leading-relaxed mb-6">
+              <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 md:mb-6">
                 {member.description}
               </p>
               
               {/* Social Links */}
-              <div className="flex justify-center space-x-3">
-                <div className={`w-10 h-10 flex items-center justify-center ${member.color === 'blue' ? 'bg-blue-100 text-blue-600' : 'bg-indigo-100 text-indigo-600'} hover:scale-110 rounded-full cursor-pointer transition-all`}>
+              <div className="flex justify-center space-x-2 md:space-x-3">
+                <div className={`w-8 h-8 md:w-10 md:h-10 flex items-center justify-center ${member.color === 'blue' ? 'bg-blue-100 text-blue-600' : 'bg-indigo-100 text-indigo-600'} hover:scale-110 rounded-full cursor-pointer transition-all text-sm md:text-base`}>
                   <i className="ri-linkedin-fill"></i>
                 </div>
-                <div className={`w-10 h-10 flex items-center justify-center ${member.color === 'blue' ? 'bg-blue-100 text-blue-600' : 'bg-indigo-100 text-indigo-600'} hover:scale-110 rounded-full cursor-pointer transition-all`}>
+                <div className={`w-8 h-8 md:w-10 md:h-10 flex items-center justify-center ${member.color === 'blue' ? 'bg-blue-100 text-blue-600' : 'bg-indigo-100 text-indigo-600'} hover:scale-110 rounded-full cursor-pointer transition-all text-sm md:text-base`}>
                   <i className="ri-twitter-fill"></i>
                 </div>
-                <div className={`w-10 h-10 flex items-center justify-center ${member.color === 'blue' ? 'bg-blue-100 text-blue-600' : 'bg-indigo-100 text-indigo-600'} hover:scale-110 rounded-full cursor-pointer transition-all`}>
+                <div className={`w-8 h-8 md:w-10 md:h-10 flex items-center justify-center ${member.color === 'blue' ? 'bg-blue-100 text-blue-600' : 'bg-indigo-100 text-indigo-600'} hover:scale-110 rounded-full cursor-pointer transition-all text-sm md:text-base`}>
                   <i className="ri-mail-fill"></i>
                 </div>
               </div>
@@ -129,11 +129,11 @@ export default function TeamSection() {
         </div>
 
         {/* Join Team CTA - matching home page colors */}
-        <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-2xl border border-blue-200">
-            <h3 className="text-2xl font-bold text-gray-800 mb-4">Join Our Team</h3>
-            <p className="text-gray-600 mb-6">We're always looking for talented individuals to join our growing team</p>
-            <button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-full font-semibold hover:scale-105 transition-all duration-300 whitespace-nowrap cursor-pointer shadow-lg shadow-blue-500/25">
+        <div className="text-center mt-10 md:mt-14 lg:mt-16">
+          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 md:p-8 rounded-xl md:rounded-2xl border border-blue-200">
+            <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-3 md:mb-4">Join Our Team</h3>
+            <p className="text-sm md:text-base text-gray-600 mb-4 md:mb-6">We're always looking for talented individuals to join our growing team</p>
+            <button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold hover:scale-105 transition-all duration-300 whitespace-nowrap cursor-pointer shadow-lg shadow-blue-500/25 text-sm md:text-base">
               View Open Positions
             </button>
           </div>

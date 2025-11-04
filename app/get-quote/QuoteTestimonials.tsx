@@ -49,7 +49,7 @@ export default function QuoteTestimonials() {
     {
       number: "95%",
       label: "Quote Accuracy",
-      icon: "ri-target-line"
+      icon: "ri-file-check-line"
     },
     {
       number: "24hr",

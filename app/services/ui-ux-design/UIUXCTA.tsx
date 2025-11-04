@@ -108,7 +108,7 @@ export default function UIUXCTA() {
                       <div className="font-semibold text-gray-900">UI/UX Audit</div>
                       <div className="text-sm text-gray-600">Comprehensive design review & recommendations</div>
                     </div>
-                    <div className="text-2xl font-bold text-blue-600">$1,500</div>
+                    {/* <div className="text-2xl font-bold text-blue-600">$1,500</div> */}
                   </div>
                   
                   <div className="flex justify-between items-center p-4 bg-indigo-50 rounded-xl">
@@ -116,7 +116,7 @@ export default function UIUXCTA() {
                       <div className="font-semibold text-gray-900">Complete Redesign</div>
                       <div className="text-sm text-gray-600">Full UI/UX design from research to handoff</div>
                     </div>
-                    <div className="text-2xl font-bold text-indigo-600">$8,000</div>
+                    {/* <div className="text-2xl font-bold text-indigo-600">$8,000</div> */}
                   </div>
                   
                   <div className="flex justify-between items-center p-4 bg-blue-50 rounded-xl">
@@ -124,7 +124,7 @@ export default function UIUXCTA() {
                       <div className="font-semibold text-gray-900">Design System</div>
                       <div className="text-sm text-gray-600">Comprehensive design system & guidelines</div>
                     </div>
-                    <div className="text-2xl font-bold text-blue-600">$5,000</div>
+                    {/* <div className="text-2xl font-bold text-blue-600">$5,000</div> */}
                   </div>
                 </div>
                 

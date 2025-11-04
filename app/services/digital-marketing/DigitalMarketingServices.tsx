@@ -9,7 +9,7 @@ export default function DigitalMarketingServices() {
       subtitle: "Organic Growth",
       description: "We enhance your organic visibility to attract high-quality traffic and more leads from local customers.",
       features: ["Keyword Research & Strategy", "On-Page Optimization", "Technical SEO", "Local SEO for geo-targeted reach", "SEO audit & competitor analysis"],
-      price: "Starting at $2,000/month",
+      price: "",
       gradient: "from-blue-500 to-blue-600"
     },
     {
@@ -18,7 +18,7 @@ export default function DigitalMarketingServices() {
       subtitle: "Instant Results", 
       description: "Launch high-converting ad campaigns that get you found in front of the right audience at the perfect time.",
       features: ["Google Ads (Search, Display, Shopping)", "Social media ads (Facebook, Instagram, LinkedIn, YouTube)", "Amazon PPC", "Landing page optimization", "Budget management & ROI tracking"],
-      price: "Starting at $1,500/month",
+      price: "",
       gradient: "from-indigo-500 to-indigo-600"
     },
     {
@@ -27,7 +27,7 @@ export default function DigitalMarketingServices() {
       subtitle: "Brand Engagement",
       description: "We create and execute social media campaigns that deliver leads, organic comments, and engagements from your target audience.",
       features: ["Automated daily campaigns", "Foundation & promotional content", "Segmentation & personalization", "Influencing & optimization"],
-      price: "Starting at $1,200/month",
+      price: "",
       gradient: "from-blue-400 to-indigo-500"
     },
     {
@@ -36,7 +36,7 @@ export default function DigitalMarketingServices() {
       subtitle: "Direct Communication",
       description: "Nurture leads and retain customers with personalized email campaigns and automated marketing sequences.",
       features: ["Email Campaigns", "Marketing Automation", "Segmentation", "A/B Testing", "Performance Tracking"],
-      price: "Starting at $800/month",
+      price: "",
       gradient: "from-indigo-600 to-blue-700"
     },
     {
@@ -45,7 +45,7 @@ export default function DigitalMarketingServices() {
       subtitle: "Valuable Content",
       description: "Engaging blogs, articles, and whitepapers that drive traffic and establish authority.",
       features: ["Blog Writing & Content Creation", "Influencer Partnerships", "Video content production", "Content distribution & performance", "Social media management (Facebook, Instagram, LinkedIn, Twitter & more)"],
-      price: "Starting at $1,500/month",
+      price: "",
       gradient: "from-blue-600 to-indigo-700"
     },
     {
@@ -54,7 +54,7 @@ export default function DigitalMarketingServices() {
       subtitle: "Data Insights",
       description: "Track, measure, and optimize your marketing performance with comprehensive analytics and regular reporting.",
       features: ["Google Analytics & Google Analytics", "Conversion Tracking", "ROI Analysis", "Custom Reports", "Performance Insights"],
-      price: "Starting at $600/month",
+      price: "",
       gradient: "from-blue-500 to-indigo-600"
     }
   ];
