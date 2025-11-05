@@ -36,7 +36,7 @@ export default function ServicesSection() {
       image: 'https://readdy.ai/api/search-image?query=Web%20development%20team%20coding%20with%20blue-themed%20IDE%20and%20websites%2C%20responsive%20design%20on%20multiple%20screens%2C%20modern%20blue%20interface%20elements%2C%20developers%20working%20on%20laptops%2C%20blue%20and%20white%20workspace%2C%20clean%20development%20environment&width=600&height=400&seq=web-blue-v1&orientation=landscape',
       color: 'from-blue-600 to-indigo-600',
       bgColor: 'from-blue-50 to-indigo-50',
-      price: '$2,999',
+      price:'',
       duration: '2-4 months',
       link: '/services/web-development'
     },
@@ -48,7 +48,7 @@ export default function ServicesSection() {
       image: 'https://readdy.ai/api/search-image?query=Mobile%20app%20development%20with%20blue%20interface%20design%2C%20developers%20working%20on%20smartphones%20and%20tablets%2C%20modern%20blue-themed%20app%20mockups%2C%20iOS%20and%20Android%20development%20workspace%2C%20blue%20UI%20elements%2C%20clean%20tech%20environment&width=600&height=400&seq=mobile-blue-v1&orientation=landscape',
       color: 'from-indigo-600 to-blue-600',
       bgColor: 'from-indigo-50 to-blue-50',
-      price: '$15,999',
+      price:'',
       duration: '4-6 months',
       link: '/services/mobile-development'
     },
@@ -60,7 +60,7 @@ export default function ServicesSection() {
       image: 'https://readdy.ai/api/search-image?query=UI%20UX%20design%20workspace%20with%20blue-themed%20interface%20mockups%2C%20designers%20working%20on%20wireframes%20and%20prototypes%2C%20modern%20design%20tools%2C%20blue%20color%20palette%2C%20creative%20design%20environment%2C%20user%20experience%20research&width=600&height=400&seq=uiux-blue-v1&orientation=landscape',
       color: 'from-blue-500 to-indigo-500',
       bgColor: 'from-blue-50 to-indigo-50',
-      price: '$4,999',
+      price:'',
       duration: '2-3 months',
       link: '/services/ui-ux-design'
     },
@@ -72,7 +72,7 @@ export default function ServicesSection() {
       image: 'https://readdy.ai/api/search-image?query=Digital%20marketing%20team%20working%20with%20blue-themed%20analytics%20dashboard%2C%20SEO%20optimization%20tools%20on%20screens%2C%20modern%20office%20with%20blue%20lighting%2C%20marketing%20professionals%20analyzing%20data%2C%20blue%20and%20white%20color%20scheme%2C%20clean%20tech%20workspace&width=600&height=400&seq=marketing-blue-v1&orientation=landscape',
       color: 'from-blue-600 to-blue-700',
       bgColor: 'from-blue-50 to-blue-100',
-      price: '$2,499',
+      price:'',
       duration: '3-6 months',
       link: '/services/digital-marketing'
     }
@@ -193,9 +193,9 @@ export default function ServicesSection() {
                 </div>
 
                 {/* Pricing badge */}
-                <div className="absolute top-4 right-4 md:top-6 md:right-6 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1.5 md:px-4 md:py-2 border border-blue-200 group-hover:scale-110 transition-all duration-300">
+                {/* <div className="absolute top-4 right-4 md:top-6 md:right-6 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1.5 md:px-4 md:py-2 border border-blue-200 group-hover:scale-110 transition-all duration-300">
                   <div className="text-blue-600 font-bold text-xs md:text-sm">{service.price}</div>
-                </div>
+                </div> */}
 
                 {/* Duration indicator */}
                 <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1.5 md:px-4 md:py-2 border border-blue-200 group-hover:scale-110 transition-all duration-300">
