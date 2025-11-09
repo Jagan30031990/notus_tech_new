@@ -52,7 +52,7 @@ export default function MobileDevHero() {
                 Create powerful iOS and Android applications that deliver exceptional user experiences and drive business growth
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 mb-12">
+              {/* <div className="flex flex-col sm:flex-row gap-4 mb-12">
                 <button className="group bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all duration-300 whitespace-nowrap cursor-pointer flex items-center justify-center hover:scale-105">
                   Start App Development
                   <i className="ri-arrow-right-line ml-2 group-hover:translate-x-1 transition-transform"></i>
@@ -60,7 +60,7 @@ export default function MobileDevHero() {
                 <button className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300 whitespace-nowrap cursor-pointer">
                   View App Portfolio
                 </button>
-              </div>
+              </div> */}
               
               {/* Quick stats */}
               <div className="grid grid-cols-3 gap-6">

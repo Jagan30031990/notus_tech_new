@@ -92,20 +92,20 @@ export default function AboutHero() {
 
           {/* Action Buttons - matching home page gradient */}
           <div className={`flex flex-col sm:flex-row gap-4 md:gap-6 justify-center mb-10 md:mb-12 lg:mb-16 px-4 animate-slideInUp`} style={{ animationDelay: '1s' }}>
-            <button className="group relative px-6 py-3 md:px-8 md:py-4 lg:px-10 lg:py-4 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full font-semibold text-white overflow-hidden hover:scale-105 transition-all duration-300 whitespace-nowrap cursor-pointer shadow-xl shadow-blue-500/25 text-sm md:text-base">
+            {/* <button className="group relative px-6 py-3 md:px-8 md:py-4 lg:px-10 lg:py-4 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full font-semibold text-white overflow-hidden hover:scale-105 transition-all duration-300 whitespace-nowrap cursor-pointer shadow-xl shadow-blue-500/25 text-sm md:text-base">
               <span className="relative z-10 flex items-center justify-center">
                 <i className="ri-play-circle-fill mr-2 md:mr-3 text-base md:text-lg group-hover:animate-bounce"></i>
                 Discover Our Story
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </button>
+            </button> */}
             
-            <button className="group px-6 py-3 md:px-8 md:py-4 lg:px-10 lg:py-4 border-2 border-blue-600 bg-blue-50 backdrop-blur-sm rounded-full font-semibold text-blue-600 hover:bg-blue-100 transition-all duration-300 whitespace-nowrap cursor-pointer relative overflow-hidden hover:scale-105 text-sm md:text-base">
+            {/* <button className="group px-6 py-3 md:px-8 md:py-4 lg:px-10 lg:py-4 border-2 border-blue-600 bg-blue-50 backdrop-blur-sm rounded-full font-semibold text-blue-600 hover:bg-blue-100 transition-all duration-300 whitespace-nowrap cursor-pointer relative overflow-hidden hover:scale-105 text-sm md:text-base">
               <span className="relative z-10 flex items-center justify-center">
                 <i className="ri-user-star-line mr-2 md:mr-3 text-base md:text-lg group-hover:animate-pulse"></i>
                 Meet Our Experts
               </span>
-            </button>
+            </button> */}
           </div>
 
           {/* Stats Grid - matching home page colors */}

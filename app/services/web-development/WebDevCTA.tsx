@@ -67,10 +67,10 @@ export default function WebDevCTA() {
                 Get Free Quote
                 <i className="ri-arrow-right-line ml-2 group-hover:translate-x-1 transition-transform"></i>
               </Link>
-              <button className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300 whitespace-nowrap cursor-pointer flex items-center justify-center">
+              {/* <button className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300 whitespace-nowrap cursor-pointer flex items-center justify-center">
                 <i className="ri-phone-line mr-2"></i>
-                Call (555) 123-4567
-              </button>
+                Call +91 9911433392
+              </button> */}
             </div>
           </div>
           

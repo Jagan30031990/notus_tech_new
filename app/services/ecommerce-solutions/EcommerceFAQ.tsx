@@ -92,13 +92,13 @@ export default function EcommerceFAQ() {
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        {/* <div className="text-center mt-12">
           <p className="text-gray-600 mb-6">Have more questions?</p>
           <button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all duration-300 whitespace-nowrap cursor-pointer flex items-center justify-center mx-auto">
             <i className="ri-chat-3-line mr-3"></i>
             Contact Us for Consultation
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

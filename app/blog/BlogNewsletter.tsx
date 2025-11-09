@@ -29,12 +29,12 @@ export default function BlogNewsletter() {
                 className="flex-1 px-6 py-4 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
                 required
               />
-              <button
+              {/* <button
                 type="submit"
                 className="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-full hover:scale-105 transition-all duration-300 cursor-pointer whitespace-nowrap"
               >
                 Subscribe
-              </button>
+              </button> */}
             </form>
             
             <div className="flex items-center justify-center gap-8 text-sm text-gray-500">

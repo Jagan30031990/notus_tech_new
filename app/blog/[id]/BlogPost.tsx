@@ -342,18 +342,18 @@ export default function BlogPost({ postId }: BlogPostProps) {
       <div className="flex items-center gap-4 mt-8 pt-8 border-t">
         <span className="text-gray-600 font-medium">Share:</span>
         <div className="flex gap-3">
-          <button className="w-10 h-10 bg-blue-600 hover:bg-blue-700 text-white rounded-full flex items-center justify-center cursor-pointer transition-colors duration-300">
+          {/* <button className="w-10 h-10 bg-blue-600 hover:bg-blue-700 text-white rounded-full flex items-center justify-center cursor-pointer transition-colors duration-300">
             <i className="ri-facebook-fill"></i>
-          </button>
-          <button className="w-10 h-10 bg-sky-500 hover:bg-sky-600 text-white rounded-full flex items-center justify-center cursor-pointer transition-colors duration-300">
+          </button> */}
+          {/* <button className="w-10 h-10 bg-sky-500 hover:bg-sky-600 text-white rounded-full flex items-center justify-center cursor-pointer transition-colors duration-300">
             <i className="ri-twitter-fill"></i>
-          </button>
-          <button className="w-10 h-10 bg-blue-700 hover:bg-blue-800 text-white rounded-full flex items-center justify-center cursor-pointer transition-colors duration-300">
+          </button> */}
+          {/* <button className="w-10 h-10 bg-blue-700 hover:bg-blue-800 text-white rounded-full flex items-center justify-center cursor-pointer transition-colors duration-300">
             <i className="ri-linkedin-fill"></i>
-          </button>
-          <button className="w-10 h-10 bg-gray-600 hover:bg-gray-700 text-white rounded-full flex items-center justify-center cursor-pointer transition-colors duration-300">
+          </button> */}
+          {/* <button className="w-10 h-10 bg-gray-600 hover:bg-gray-700 text-white rounded-full flex items-center justify-center cursor-pointer transition-colors duration-300">
             <i className="ri-link"></i>
-          </button>
+          </button> */}
         </div>
       </div>
 

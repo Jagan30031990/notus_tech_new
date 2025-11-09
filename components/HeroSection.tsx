@@ -42,7 +42,7 @@ export default function HeroSection() {
             {/* Enhanced main heading */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 leading-tight text-gray-900">
               <span className="block animate-slideInUp">Transform Your Business</span>
-              <span className="block bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 bg-clip-text text-transparent animate-slideInUp" style={{ animationDelay: '0.2s' }}>
+              <span className="block leading-[40px] md:leading-[100px] lg:leading-[100px] bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 bg-clip-text text-transparent animate-slideInUp" style={{ animationDelay: '0.2s' }}>
                 With Cutting-Edge
               </span>
               <span className="block animate-slideInUp" style={{ animationDelay: '0.4s' }}>
@@ -53,7 +53,7 @@ export default function HeroSection() {
             {/* Enhanced description */}
             <p className={`text-base sm:text-lg md:text-xl mb-6 md:mb-8 lg:mb-10 text-gray-600 leading-relaxed max-w-lg transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               We deliver innovative technology solutions that drive growth, enhance efficiency, and create exceptional user experiences. Partner with us to accelerate your digital transformation journey.
-            </p>
+            </p>  
 
             {/* Enhanced CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6 mb-8 md:mb-10 lg:mb-12">

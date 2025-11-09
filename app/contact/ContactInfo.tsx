@@ -44,7 +44,9 @@ export default function ContactInfo() {
               <div>
                 <h4 className="text-xl font-bold text-gray-900 mb-2">Our Location</h4>
                 <div className="text-gray-600 leading-relaxed">
-                  <p className="font-medium">House No. 31 Street No.1 Govrani</p>
+                  <p className="font-medium">plot no 11, </p>
+                  <p>siyaram enclave, bhondsi</p>
+                  <p>sohna road, gurgaon 122102, haryana, india</p>
                   <p>Enclave Prashant Colony Road</p>
                   <p>Gurgaon-122102 Haryana</p>
                   <p className="font-medium text-blue-600">India</p>
@@ -63,11 +65,11 @@ export default function ContactInfo() {
                 <div className="text-gray-600 space-y-1">
                   <div className="flex items-center gap-2">
                     <i className="ri-phone-fill text-indigo-600 text-sm"></i>
-                    <span className="font-medium">+91 991 1433 392</span>
+                    <span className="font-medium">+91 9911433392</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <i className="ri-phone-fill text-indigo-600 text-sm"></i>
-                    <span className="font-medium">+91 991 1433 402</span>
+                    <span className="font-medium">+91 8250983407</span>
                   </div>
                 </div>
               </div>
@@ -83,7 +85,7 @@ export default function ContactInfo() {
                 <h4 className="text-xl font-bold text-gray-900 mb-2">Email Support</h4>
                 <div className="flex items-center gap-2">
                   <i className="ri-mail-fill text-blue-600 text-sm"></i>
-                  <span className="text-gray-600 font-medium">support@notustechnologies.co.in</span>
+                  <span className="text-gray-600 font-medium">info@notustechnologies.co.in</span>
                 </div>
                 <p className="text-sm text-gray-500 mt-1">We respond within 24 hours</p>
               </div>

@@ -51,10 +51,10 @@ export default function ManagedServices() {
             </div>
 
             {/* CTA Button */}
-            <button className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold hover:scale-105 transition-all duration-300 whitespace-nowrap cursor-pointer flex items-center text-sm md:text-base">
+            {/* <button className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold hover:scale-105 transition-all duration-300 whitespace-nowrap cursor-pointer flex items-center text-sm md:text-base">
               Learn More
               <i className="ri-arrow-right-line ml-2"></i>
-            </button>
+            </button> */}
           </div>
 
           {/* Right side - Image with stats */}

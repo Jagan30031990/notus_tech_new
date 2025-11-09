@@ -114,15 +114,15 @@ export default function TeamSection() {
               
               {/* Social Links */}
               <div className="flex justify-center space-x-2 md:space-x-3">
-                <div className={`w-8 h-8 md:w-10 md:h-10 flex items-center justify-center ${member.color === 'blue' ? 'bg-blue-100 text-blue-600' : 'bg-indigo-100 text-indigo-600'} hover:scale-110 rounded-full cursor-pointer transition-all text-sm md:text-base`}>
+                {/* <div className={`w-8 h-8 md:w-10 md:h-10 flex items-center justify-center ${member.color === 'blue' ? 'bg-blue-100 text-blue-600' : 'bg-indigo-100 text-indigo-600'} hover:scale-110 rounded-full cursor-pointer transition-all text-sm md:text-base`}>
                   <i className="ri-linkedin-fill"></i>
-                </div>
-                <div className={`w-8 h-8 md:w-10 md:h-10 flex items-center justify-center ${member.color === 'blue' ? 'bg-blue-100 text-blue-600' : 'bg-indigo-100 text-indigo-600'} hover:scale-110 rounded-full cursor-pointer transition-all text-sm md:text-base`}>
+                </div> */}
+                {/* <div className={`w-8 h-8 md:w-10 md:h-10 flex items-center justify-center ${member.color === 'blue' ? 'bg-blue-100 text-blue-600' : 'bg-indigo-100 text-indigo-600'} hover:scale-110 rounded-full cursor-pointer transition-all text-sm md:text-base`}>
                   <i className="ri-twitter-fill"></i>
-                </div>
-                <div className={`w-8 h-8 md:w-10 md:h-10 flex items-center justify-center ${member.color === 'blue' ? 'bg-blue-100 text-blue-600' : 'bg-indigo-100 text-indigo-600'} hover:scale-110 rounded-full cursor-pointer transition-all text-sm md:text-base`}>
+                </div> */}
+                {/* <div className={`w-8 h-8 md:w-10 md:h-10 flex items-center justify-center ${member.color === 'blue' ? 'bg-blue-100 text-blue-600' : 'bg-indigo-100 text-indigo-600'} hover:scale-110 rounded-full cursor-pointer transition-all text-sm md:text-base`}>
                   <i className="ri-mail-fill"></i>
-                </div>
+                </div> */}
               </div>
             </div>
           ))}
@@ -133,9 +133,9 @@ export default function TeamSection() {
           <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 md:p-8 rounded-xl md:rounded-2xl border border-blue-200">
             <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-3 md:mb-4">Join Our Team</h3>
             <p className="text-sm md:text-base text-gray-600 mb-4 md:mb-6">We're always looking for talented individuals to join our growing team</p>
-            <button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold hover:scale-105 transition-all duration-300 whitespace-nowrap cursor-pointer shadow-lg shadow-blue-500/25 text-sm md:text-base">
+            {/* <button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold hover:scale-105 transition-all duration-300 whitespace-nowrap cursor-pointer shadow-lg shadow-blue-500/25 text-sm md:text-base">
               View Open Positions
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

@@ -63,7 +63,7 @@ export default function BrandingHero() {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-6">
+            {/* <div className="flex flex-col sm:flex-row gap-6">
               <button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all duration-300 whitespace-nowrap cursor-pointer flex items-center justify-center">
                 <i className="ri-palette-line mr-3"></i>
                 Start Branding
@@ -72,7 +72,7 @@ export default function BrandingHero() {
                 <i className="ri-image-line mr-2"></i>
                 View Portfolio
               </button>
-            </div>
+            </div> */}
           </div>
 
           <div className="relative">

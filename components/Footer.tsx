@@ -125,7 +125,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <div className="text-sm text-gray-400">Email</div>
-                  <div>hello@notustechnologies.com</div>
+                  <div>info@notustechnologies.co.in</div>
                 </div>
               </div>
               <div className="flex items-center text-gray-300">
@@ -134,16 +134,19 @@ export default function Footer() {
                 </div>
                 <div>
                   <div className="text-sm text-gray-400">Phone</div>
-                  <div>+1 (555) 123-4567</div>
+                  <div>+91 9911433392</div>
+                  <div>+91 8250983407</div>
                 </div>
               </div>
-              <div className="flex items-center text-gray-300">
+              <div className="flex items-centerw-full text-gray-300">
                 <div className="w-10 h-10 flex items-center justify-center bg-blue-600/20 rounded-full mr-4">
                   <i className="ri-map-pin-line"></i>
                 </div>
-                <div>
+                <div >
                   <div className="text-sm text-gray-400">Office</div>
-                  <div>Gurgaon, Haryana</div>
+                  <div>plot no 11, </div>
+                  <div>siyaram enclave, bhondsi</div>
+                  <div>sohna road, gurgaon 122102, haryana, india</div>
                 </div>
               </div>
               <div className="flex items-center text-green-400">

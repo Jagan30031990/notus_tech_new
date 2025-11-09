@@ -37,7 +37,7 @@ export default function ContactMap() {
         <div className="bg-white rounded-3xl overflow-hidden shadow-2xl border border-blue-100">
           <div className="relative">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.4901!2d77.0260!3d28.4595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d229b9f7b0b0b%3A0x0!2sGurgaon%2C%20Haryana%2C%20India!5e0!3m2!1sen!2sus!4v1234567890"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d390.3970906763182!2d77.06797565212301!3d28.346469992865437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d23900af74ea3%3A0xfabafb79489a7d4!2sSiyaram%20Enclave!5e0!3m2!1sen!2sin!4v1762700672736!5m2!1sen!2sin"
               width="100%"
               height="500"
               style={{ border: 0 }}
@@ -48,7 +48,7 @@ export default function ContactMap() {
             />
             
             {/* Overlay with contact info */}
-            <div className="absolute top-6 left-6 bg-white rounded-2xl p-6 shadow-xl border border-blue-100 max-w-sm">
+            <div className="absolute top-2 right-2 bg-white rounded-2xl p-6 shadow-xl border border-blue-100 max-w-sm">
               <div className="flex items-start">
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
                   <i className="ri-building-line text-white text-xl"></i>
@@ -56,17 +56,18 @@ export default function ContactMap() {
                 <div>
                   <h3 className="font-bold text-gray-900 mb-2">Notus Technologies</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    House No. 31 Street No.1 Govrani Enclave<br />
-                    Prashant Colony Road<br />
-                    Gurgaon-122102, Haryana, India
+                    plot no 11, siyaram enclave, bhondsi<br />
+                    sohna road, gurgaon 122102, haryana, india<br />
                   </p>
-                  <div className="flex items-center gap-2 mt-3">
-                    <i className="ri-phone-line text-blue-600 text-sm"></i>
-                    <span className="text-sm font-medium text-blue-600">+91 991 1433 392</span>
-                  </div>
                 </div>
               </div>
+              <div className="flex items-center gap-2 mt-3">
+                <i className="ri-phone-line text-blue-600 text-sm"></i>
+                <span className="text-sm font-medium text-blue-600">+91 9911433392</span>
+                <span className="text-sm font-medium text-blue-600">+91 8250983407</span>
+              </div>
             </div>
+            
 
             {/* Business hours overlay */}
             <div className="absolute bottom-6 right-6 bg-white rounded-2xl p-6 shadow-xl border border-blue-100">

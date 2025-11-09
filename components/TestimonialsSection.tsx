@@ -139,62 +139,34 @@ export default function TestimonialsSection() {
   return (
     <section 
       ref={sectionRef}
-      className="relative min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 overflow-hidden py-12 md:py-20 lg:py-28"
+      className="relative min-h-screen  bg-white overflow-hidden py-12 md:py-20 lg:py-28"
     >
       {/* Background elements matching homepage blue theme */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 right-20 w-48 h-48 md:w-72 md:h-72 lg:w-96 lg:h-96 bg-gradient-to-r from-blue-400/20 to-indigo-400/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 left-20 w-40 h-40 md:w-60 md:h-60 lg:w-80 lg:h-80 bg-gradient-to-r from-blue-500/15 to-cyan-500/15 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 md:w-60 md:h-60 lg:w-72 lg:h-72 bg-gradient-to-r from-indigo-300/10 to-blue-300/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
-      </div>
+      
 
-      {/* Geometric shapes */}
-      <div className="absolute inset-0">
-        <div className="absolute top-32 left-4 md:left-8 lg:left-16 w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-blue-500/15 rounded-2xl rotate-12 animate-pulse"></div>
-        <div className="absolute bottom-32 right-4 md:right-8 lg:right-16 w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 bg-indigo-600/15 rounded-xl rotate-45 animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 right-8 md:right-16 lg:right-32 w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-blue-400/20 rounded-full animate-bounce"></div>
-        <div className="absolute top-1/4 left-4 md:left-8 lg:left-1/4 w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 bg-cyan-500/20 rounded-lg rotate-12 animate-pulse delay-500"></div>
-      </div>
-
-      {/* Blue themed animated particles with fixed positions */}
-      <div className="absolute inset-0">
-        {staticParticles.map((particle, index) => (
-          <div
-            key={index}
-            className="absolute animate-ping"
-            style={{
-              left: particle.left,
-              top: particle.top,
-              animationDelay: `${(index * 0.17 + 0.2) % 5}s`,
-              animationDuration: `${2 + ((index * 0.13) % 4)}s`
-            }}
-          >
-            <div className="w-1 h-1 rounded-full blur-sm bg-blue-300/50"></div>
-          </div>
-        ))}
-      </div>
+      
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-3">
         {/* Section header with blue theme */}
         <div className="text-center mb-12 md:mb-16 lg:mb-20">
-          <div className={`inline-flex items-center px-4 py-2 md:px-6 md:py-3 bg-white/10 backdrop-blur-md rounded-full border border-blue-300/20 mb-6 md:mb-8 transition-all duration-1000 hover:scale-110 cursor-pointer ${isVisible ? 'animate-slideInDown' : 'opacity-0'}`}>
-            <i className="ri-chat-quote-line text-blue-300 mr-2 md:mr-3 text-base md:text-lg animate-pulse"></i>
-            <span className="text-xs sm:text-sm font-medium text-white/90">Client Success Stories & Testimonials</span>
-            <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-full ml-2 md:ml-3 animate-ping"></div>
+          <div className={`inline-flex items-center px-4 py-2 md:px-6 md:py-3 bg-white/10 backdrop-blur-md rounded-full border border-blue-700/30 mb-6 md:mb-8 transition-all duration-1000 hover:scale-110 cursor-pointer ${isVisible ? 'animate-slideInDown' : 'opacity-0'}`}>
+            <i className="ri-chat-quote-line text-blue-700 mr-2 md:mr-3 text-base md:text-lg animate-pulse"></i>
+            <span className="text-xs sm:text-sm font-medium text-gray-800">Client Success Stories & Testimonials</span>
+            <div className="w-2 h-2 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full ml-2 md:ml-3 animate-ping"></div>
           </div>
           <h2 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 md:mb-6 lg:mb-8 px-4 transition-all duration-1000 delay-300 ${isVisible ? 'animate-slideInUp' : 'opacity-0'}`}>
-            <span className="bg-gradient-to-r from-blue-300 via-blue-100 to-white bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-700 via-blue-600 to-blue-800 bg-clip-text text-transparent">
               What Our Clients Say
             </span>
           </h2>
-          <p className={`text-base sm:text-lg md:text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed px-4 transition-all duration-1000 delay-500 ${isVisible ? 'animate-slideInUp' : 'opacity-0'}`}>
+          <p className={`text-base sm:text-lg md:text-xl text-slate-700 max-w-4xl mx-auto leading-relaxed px-4 transition-all duration-1000 delay-500 ${isVisible ? 'animate-slideInUp' : 'opacity-0'}`}>
             Don't just take our word for it. Here's what industry leaders and innovative companies have to say about their transformative experiences working with Notus Technologies.
           </p>
         </div>
 
         {/* Main testimonial with blue theme */}
         <div className="relative max-w-6xl mx-auto mb-8 md:mb-12 lg:mb-16">
-          <div className={`bg-white/10 backdrop-blur-md rounded-2xl md:rounded-3xl p-6 md:p-10 lg:p-16 border border-blue-300/20 shadow-2xl hover:scale-105 transition-all duration-700 cursor-pointer group ${isVisible ? 'animate-slideInUp' : 'opacity-0'}`} style={{ animationDelay: '0.8s' }}>
+          <div className={`bg-white/10 backdrop-blur-md rounded-2xl md:rounded-3xl p-6 md:p-10 lg:p-16 border border-blue-700/30 shadow-2xl hover:scale-105 transition-all duration-700 cursor-pointer group ${isVisible ? 'animate-slideInUp' : 'opacity-0'}`} style={{ animationDelay: '0.8s' }}>
             {/* Blue themed quote icon */}
             <div className="flex justify-center mb-6 md:mb-8 lg:mb-10">
               <div className="relative w-16 h-16 md:w-20 md:h-20 lg:w-20 lg:h-20 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 shadow-lg">
@@ -205,7 +177,7 @@ export default function TestimonialsSection() {
 
             {/* Testimonial content */}
             <div className="text-center mb-6 md:mb-8 lg:mb-10">
-              <blockquote className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium text-white mb-4 md:mb-6 lg:mb-8 leading-relaxed px-2 group-hover:text-slate-100 transition-colors duration-500">
+              <blockquote className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium text-gray-800 mb-4 md:mb-6 lg:mb-8 leading-relaxed px-2 group-hover:text-gray-900 transition-colors duration-500">
                 "{testimonials[currentTestimonial].content}"
               </blockquote>
               
@@ -214,16 +186,16 @@ export default function TestimonialsSection() {
                 {[...Array(5)].map((_, i) => (
                   <i 
                     key={i} 
-                    className="ri-star-fill text-xl md:text-2xl lg:text-3xl mx-0.5 md:mx-1 animate-pulse group-hover:animate-bounce transition-all duration-300 hover:scale-125 cursor-pointer text-blue-400"
+                    className="ri-star-fill text-xl md:text-2xl lg:text-3xl mx-0.5 md:mx-1 animate-pulse group-hover:animate-bounce transition-all duration-300 hover:scale-125 cursor-pointer text-blue-600"
                     style={{ animationDelay: `${i * 0.1}s` }}
                   ></i>
                 ))}
               </div>
 
               {/* Blue result metric badge */}
-              <div className="inline-flex items-center px-4 py-2 md:px-6 md:py-3 bg-gradient-to-r from-blue-500/20 to-indigo-600/20 backdrop-blur-sm rounded-full border border-blue-300/30 mb-4 md:mb-6 lg:mb-8">
-                <i className="ri-trophy-line text-blue-300 mr-2 animate-pulse text-sm md:text-base"></i>
-                <span className="text-white font-medium text-sm md:text-base">{testimonials[currentTestimonial].resultMetric}</span>
+              <div className="inline-flex items-center px-4 py-2 md:px-6 md:py-3 bg-gradient-to-r from-blue-600/30 to-indigo-700/30 backdrop-blur-sm rounded-full border border-blue-700/40 mb-4 md:mb-6 lg:mb-8">
+                <i className="ri-trophy-line text-blue-700 mr-2 animate-pulse text-sm md:text-base"></i>
+                <span className="text-gray-800 font-medium text-sm md:text-base">{testimonials[currentTestimonial].resultMetric}</span>
               </div>
             </div>
 
@@ -232,25 +204,25 @@ export default function TestimonialsSection() {
               <img 
                 src={testimonials[currentTestimonial].image} 
                 alt={testimonials[currentTestimonial].name}
-                className="w-16 h-16 md:w-20 md:h-20 lg:w-20 lg:h-20 rounded-full object-cover border-4 border-blue-300/30 group-hover:border-blue-300/50 transition-all duration-300 flex-shrink-0"
+                className="w-16 h-16 md:w-20 md:h-20 lg:w-20 lg:h-20 rounded-full object-cover border-4 border-blue-700/40 group-hover:border-blue-700/60 transition-all duration-300 flex-shrink-0"
               />
               <div className="text-center sm:text-left">
-                <div className="font-semibold text-white text-lg md:text-xl lg:text-2xl group-hover:text-blue-100 transition-colors duration-300">
+                <div className="font-semibold text-gray-800 text-lg md:text-xl lg:text-2xl group-hover:text-blue-800 transition-colors duration-300">
                   {testimonials[currentTestimonial].name}
                 </div>
-                <div className="text-blue-200 text-sm md:text-base lg:text-lg">
+                <div className="text-blue-700 text-sm md:text-base lg:text-lg">
                   {testimonials[currentTestimonial].position}
                 </div>
-                <div className="text-blue-300 text-xs md:text-sm">
+                <div className="text-blue-600 text-xs md:text-sm">
                   {testimonials[currentTestimonial].company}
                 </div>
               </div>
               <div className="text-center sm:text-right">
-                <div className="text-blue-200 font-medium text-sm md:text-base lg:text-lg">
+                <div className="text-blue-700 font-medium text-sm md:text-base lg:text-lg">
                   {testimonials[currentTestimonial].project}
                 </div>
-                <div className="text-blue-300 text-xs md:text-sm">Project Type</div>
-                <div className="text-blue-100 text-xs md:text-sm font-medium">
+                <div className="text-blue-600 text-xs md:text-sm">Project Type</div>
+                <div className="text-blue-800 text-xs md:text-sm font-medium">
                   {testimonials[currentTestimonial].industry}
                 </div>
               </div>
@@ -265,9 +237,9 @@ export default function TestimonialsSection() {
           <div className={`flex items-center justify-center space-x-4 md:space-x-6 lg:space-x-8 mt-6 md:mt-8 lg:mt-12 transition-all duration-1000 delay-1000 ${isVisible ? 'animate-slideInUp' : 'opacity-0'}`}>
             <button
               onClick={prevTestimonial}
-              className="w-12 h-12 md:w-14 md:h-14 lg:w-14 lg:h-14 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-blue-300/20 hover:bg-blue-500/20 hover:scale-125 transition-all duration-300 cursor-pointer group"
+              className="w-12 h-12 md:w-14 md:h-14 lg:w-14 lg:h-14 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-blue-700/30 hover:bg-blue-500/20 hover:scale-125 transition-all duration-300 cursor-pointer group"
             >
-              <i className="ri-arrow-left-line text-white text-lg md:text-xl group-hover:-translate-x-1 transition-transform duration-300"></i>
+              <i className="ri-arrow-left-line text-gray-800 text-lg md:text-xl group-hover:-translate-x-1 transition-transform duration-300"></i>
             </button>
 
             <div className="flex space-x-2 md:space-x-3">
@@ -278,7 +250,7 @@ export default function TestimonialsSection() {
                   className={`transition-all duration-500 cursor-pointer hover:scale-125 ${
                     index === currentTestimonial 
                       ? 'w-8 h-3 md:w-10 md:h-4 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full' 
-                      : 'w-3 h-3 md:w-4 md:h-4 bg-white/40 hover:bg-blue-400/60 rounded-full'
+                      : 'w-3 h-3 md:w-4 md:h-4 bg-blue-700/40 hover:bg-blue-600/60 rounded-full'
                   }`}
                 />
               ))}
@@ -286,9 +258,9 @@ export default function TestimonialsSection() {
 
             <button
               onClick={nextTestimonial}
-              className="w-12 h-12 md:w-14 md:h-14 lg:w-14 lg:h-14 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-blue-300/20 hover:bg-blue-500/20 hover:scale-125 transition-all duration-300 cursor-pointer group"
+              className="w-12 h-12 md:w-14 md:h-14 lg:w-14 lg:h-14 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-blue-700/30 hover:bg-blue-500/20 hover:scale-125 transition-all duration-300 cursor-pointer group"
             >
-              <i className="ri-arrow-right-line text-white text-lg md:text-xl group-hover:translate-x-1 transition-transform duration-300"></i>
+              <i className="ri-arrow-right-line text-gray-800 text-lg md:text-xl group-hover:translate-x-1 transition-transform duration-300"></i>
             </button>
           </div>
         </div>
@@ -296,7 +268,7 @@ export default function TestimonialsSection() {
         {/* Blue themed client logos section */}
         <div className={`mt-12 md:mt-16 lg:mt-24 transition-all duration-1000 delay-1200 ${isVisible ? 'animate-slideInUp' : 'opacity-0'}`}>
           <div className="text-center mb-6 md:mb-8 lg:mb-12 px-4">
-            <p className="text-blue-300 font-medium text-sm md:text-base">Trusted by industry leaders and innovative companies worldwide</p>
+            <p className="text-blue-700 font-medium text-sm md:text-base">Trusted by industry leaders and innovative companies worldwide</p>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8 lg:gap-12 xl:gap-16 opacity-70 hover:opacity-100 transition-opacity duration-500 px-4">
             {[
@@ -307,12 +279,12 @@ export default function TestimonialsSection() {
             ].map((company, index) => (
               <div key={index} className="text-center group flex items-center">
                 <div 
-                  className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent text-lg md:text-xl lg:text-2xl font-bold group-hover:scale-110 transition-all duration-300 cursor-pointer animate-pulse"
+                  className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent text-lg md:text-xl lg:text-2xl font-bold group-hover:scale-110 transition-all duration-300 cursor-pointer animate-pulse"
                   style={{ animationDelay: company.delay, animationDuration: '3s' }}
                 >
                   {company.name}
                 </div>
-                {index < 3 && <div className="w-1 h-6 md:h-8 bg-blue-400/20 rounded-full mx-4 md:mx-6 lg:mx-8 group-hover:bg-blue-400/40 transition-colors duration-300"></div>}
+                {index < 3 && <div className="w-1 h-6 md:h-8 bg-blue-600/30 rounded-full mx-4 md:mx-6 lg:mx-8 group-hover:bg-blue-600/50 transition-colors duration-300"></div>}
               </div>
             ))}
           </div>

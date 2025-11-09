@@ -497,15 +497,15 @@ export default function WebDevServices() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="group bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all duration-300 whitespace-nowrap cursor-pointer flex items-center justify-center hover:scale-105">
+            {/* <button className="group bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all duration-300 whitespace-nowrap cursor-pointer flex items-center justify-center hover:scale-105">
               <i className="ri-chat-3-line mr-3 group-hover:animate-bounce"></i>
               Get Free Consultation
               <i className="ri-arrow-right-line ml-2 group-hover:translate-x-1 transition-transform"></i>
-            </button>
-            <button className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300 whitespace-nowrap cursor-pointer flex items-center justify-center">
+            </button> */}
+            {/* <button className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300 whitespace-nowrap cursor-pointer flex items-center justify-center">
               <i className="ri-portfolio-line mr-2"></i>
               View Our Portfolio
-            </button>
+            </button> */}
           </div>
         </div>
       </section>

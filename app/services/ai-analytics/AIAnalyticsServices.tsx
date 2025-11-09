@@ -102,21 +102,21 @@ export default function AIAnalyticsServices() {
     {
       step: "02", 
       title: "Strategy Development",
-      description: "Define AI objectives, use cases, and create a roadmap aligned with your business goals.",
+      description: "Define AI objectives, use cases, and create a roadmap aligned with your business goals or book a strategy call.",
       icon: "ri-lightbulb-line",
       duration: "1 week"
     },
     {
       step: "03",
       title: "Data Preparation",
-      description: "Clean, transform, and prepare your data for machine learning model training and analysis.",
+      description: "Clean, transform, and prepare your data for machine learning model training and analysis or book a data preparation call.",
       icon: "ri-database-line",
       duration: "2-4 weeks"
     },
     {
       step: "04",
       title: "Model Development",
-      description: "Build, train, and validate AI models using appropriate algorithms and techniques.",
+      description: "Build, train, and validate AI models using appropriate algorithms and techniques or book a model development call.",
       icon: "ri-brain-line",
       duration: "4-8 weeks"
     },
@@ -196,9 +196,9 @@ export default function AIAnalyticsServices() {
                     </div>
                   </div>
                   
-                  <button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 whitespace-nowrap cursor-pointer">
+                  {/* <button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 whitespace-nowrap cursor-pointer">
                     Get Started
-                  </button>
+                  </button> */}
                 </div>
               </div>
             ))}

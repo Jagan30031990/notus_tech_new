@@ -239,9 +239,9 @@ export default function UIUXServices() {
                     </div>
                   </div>
                   
-                  <button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 whitespace-nowrap cursor-pointer">
+                  {/* <button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 whitespace-nowrap cursor-pointer">
                     Get Started
-                  </button>
+                  </button> */}
                 </div>
               </div>
             ))}
@@ -399,9 +399,9 @@ export default function UIUXServices() {
           <p className="text-xl text-blue-100 mb-8 leading-relaxed">
             Whether you need to design a new product, revamp an existing app, or enhance usability, Notus Technologies is here to transform your ideas into engaging and intuitive digital experiences.
           </p>
-          <button className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300 whitespace-nowrap cursor-pointer hover:scale-105">
+          {/* <button className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300 whitespace-nowrap cursor-pointer hover:scale-105">
             Contact us
-          </button>
+          </button> */}
         </div>
       </section>
     </div>

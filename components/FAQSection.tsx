@@ -205,7 +205,7 @@ export default function FAQSection({ faqs: customFAQs }: FAQSectionProps) {
                 Get personalized answers and a free consultation to discuss your specific needs and goals.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center px-4">
+              {/* <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center px-4">
                 <button className="bg-white text-blue-600 px-6 py-3 md:px-8 md:py-4 rounded-xl md:rounded-2xl font-semibold text-base md:text-lg transition-all duration-300 cursor-pointer whitespace-nowrap hover:shadow-2xl hover:scale-110 group/btn">
                   <span className="flex items-center justify-center">
                     <i className="ri-phone-line mr-2 md:mr-3 group/btn:hover:animate-bounce"></i>
@@ -218,7 +218,7 @@ export default function FAQSection({ faqs: customFAQs }: FAQSectionProps) {
                     Send Message
                   </span>
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

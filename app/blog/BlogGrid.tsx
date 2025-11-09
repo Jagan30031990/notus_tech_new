@@ -80,12 +80,12 @@ export default function BlogGrid() {
         {/* Filter Categories */}
         <div className="flex flex-wrap justify-center gap-4 mb-16">
           {categories.map((category) => (
-            <button
+            <span
               key={category}
-              className="px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer whitespace-nowrap hover:scale-105 bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-700 hover:from-blue-600 hover:to-indigo-600 hover:text-white"
+              className="px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-700"
             >
               {category}
-            </button>
+            </span>
           ))}
         </div>
 

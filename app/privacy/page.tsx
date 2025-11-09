@@ -115,15 +115,17 @@ export default function PrivacyPage() {
               <div className="space-y-3 text-gray-700">
                 <div className="flex items-center">
                   <i className="ri-mail-line mr-3 text-blue-600"></i>
-                  <span>privacy@notustechnologies.com</span>
+                  <span>info@notustechnologies.co.in</span>
                 </div>
                 <div className="flex items-center">
                   <i className="ri-phone-line mr-3 text-blue-600"></i>
-                  <span>+1 (555) 123-4567</span>
+                  <span>+91 9911433392,  </span>
+                  <span>+91 8250983407</span>
                 </div>
                 <div className="flex items-center">
                   <i className="ri-map-pin-line mr-3 text-blue-600"></i>
-                  <span>123 Tech Street, Digital City, DC 12345</span>
+                  <span>plot no 11, siyaram enclave, bhondsi, </span>
+                  <span>sohna road, gurgaon 122102, haryana, india</span>
                 </div>
               </div>
             </div>

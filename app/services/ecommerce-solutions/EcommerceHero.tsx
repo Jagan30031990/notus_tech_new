@@ -64,7 +64,7 @@ export default function EcommerceHero() {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-6">
+            {/* <div className="flex flex-col sm:flex-row gap-6">
               <button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all duration-300 whitespace-nowrap cursor-pointer flex items-center justify-center">
                 <i className="ri-shopping-bag-line mr-3"></i>
                 Launch Your Store
@@ -73,7 +73,7 @@ export default function EcommerceHero() {
                 <i className="ri-eye-line mr-2"></i>
                 View Demo Stores
               </button>
-            </div>
+            </div> */}
           </div>
 
           <div className="relative">

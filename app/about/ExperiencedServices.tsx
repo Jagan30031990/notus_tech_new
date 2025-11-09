@@ -29,10 +29,10 @@ export default function ExperiencedServices() {
             Delivering tailor-made software solutions that align with your business goals.
           </p>
 
-          <button className="bg-white text-blue-600 px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold hover:scale-105 transition-all duration-300 whitespace-nowrap cursor-pointer flex items-center mx-auto text-sm md:text-base">
+          {/* <button className="bg-white text-blue-600 px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold hover:scale-105 transition-all duration-300 whitespace-nowrap cursor-pointer flex items-center mx-auto text-sm md:text-base">
             Explore Our Service
             <i className="ri-arrow-right-line ml-2"></i>
-          </button>
+          </button> */}
         </div>
 
         {/* Stats Grid */}
@@ -43,7 +43,7 @@ export default function ExperiencedServices() {
               <i className="ri-global-line text-2xl md:text-3xl text-white"></i>
             </div>
             <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-4">
-              <span className="bg-gradient-to-r from-emerald-300 to-white bg-clip-text text-transparent">0+</span>
+              <span className="bg-gradient-to-r from-emerald-300 to-white bg-clip-text text-transparent">1+</span>
             </div>
             <div className="text-sm md:text-base lg:text-lg">
               <div className="text-white font-semibold">Countries</div>
@@ -57,7 +57,7 @@ export default function ExperiencedServices() {
               <i className="ri-computer-line text-2xl md:text-3xl text-white"></i>
             </div>
             <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-4">
-              <span className="bg-gradient-to-r from-violet-300 to-white bg-clip-text text-transparent">0+</span>
+              <span className="bg-gradient-to-r from-violet-300 to-white bg-clip-text text-transparent">10+</span>
             </div>
             <div className="text-sm md:text-base lg:text-lg">
               <div className="text-white font-semibold">IT</div>

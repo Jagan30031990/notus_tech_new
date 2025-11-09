@@ -269,12 +269,7 @@ export default function ServicesList() {
                       Learn More
                       <i className="ri-arrow-right-line ml-2"></i>
                     </Link>
-                  ) : (
-                    <button className="inline-flex items-center text-blue-600 hover:text-indigo-600 font-semibold group-hover:translate-x-2 transition-all duration-300 cursor-pointer">
-                      Learn More
-                      <i className="ri-arrow-right-line ml-2"></i>
-                    </button>
-                  )}
+                  ) : null}
                 </div>
               </div>
             ))}
@@ -442,14 +437,14 @@ export default function ServicesList() {
                 Let our technology experts help you choose the right stack for your project and guide you through the entire development process.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-blue-50 transition-all duration-300 whitespace-nowrap cursor-pointer hover:scale-105 flex items-center justify-center">
+                {/* <button className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-blue-50 transition-all duration-300 whitespace-nowrap cursor-pointer hover:scale-105 flex items-center justify-center">
                   <i className="ri-chat-3-line mr-2"></i>
                   Free Consultation
-                </button>
-                <button className="border-2 border-white/30 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300 whitespace-nowrap cursor-pointer hover:scale-105 flex items-center justify-center">
+                </button> */}
+                {/* <button className="border-2 border-white/30 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300 whitespace-nowrap cursor-pointer hover:scale-105 flex items-center justify-center">
                   <i className="ri-download-line mr-2"></i>
                   Technology Guide
-                </button>
+                </button> */}
               </div>
             </div>
           </div>

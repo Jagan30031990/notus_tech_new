@@ -42,13 +42,14 @@ export default function ServicesCTA() {
             </p>
             
             {/* Contact methods */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
               <div className="bg-white rounded-xl p-6 border border-blue-100 hover:border-blue-200 transition-colors">
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center mb-4">
                   <i className="ri-phone-line text-white text-xl"></i>
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">Call Us</h3>
-                <p className="text-blue-600 font-medium">+1 (555) 123-4567</p>
+                <p className="text-blue-600 font-medium">+91 9911433392</p>
+                <p className="text-blue-600 font-medium">+91 8250983407</p>
               </div>
               
               <div className="bg-white rounded-xl p-6 border border-blue-100 hover:border-blue-200 transition-colors">
@@ -56,16 +57,16 @@ export default function ServicesCTA() {
                   <i className="ri-mail-line text-white text-xl"></i>
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">Email Us</h3>
-                <p className="text-blue-600 font-medium">hello@company.com</p>
+                <p className="text-blue-600 font-medium text-wrap">info@notustechnologies.co.in</p>
               </div>
               
-              <div className="bg-white rounded-xl p-6 border border-blue-100 hover:border-blue-200 transition-colors">
+              {/* <div className="bg-white rounded-xl p-6 border border-blue-100 hover:border-blue-200 transition-colors">
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center mb-4">
                   <i className="ri-calendar-line text-white text-xl"></i>
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">Schedule</h3>
                 <p className="text-blue-600 font-medium">Book a Meeting</p>
-              </div>
+              </div> */}
             </div>
             
             {/* CTA Buttons */}

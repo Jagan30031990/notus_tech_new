@@ -309,9 +309,9 @@ export default function MobileDevServices() {
                     </div>
                   </div>
 
-                  <button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 whitespace-nowrap cursor-pointer">
+                  {/* <button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 whitespace-nowrap cursor-pointer">
                     Get Started
-                  </button>
+                  </button> */}
                 </div>
               </div>
             ))}
@@ -439,9 +439,9 @@ export default function MobileDevServices() {
           <p className="text-lg text-blue-200 mb-10">
             Contact us today to get started with a free consultation!
           </p>
-          <button className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-blue-50 transition-all duration-300 whitespace-nowrap cursor-pointer text-lg">
+          {/* <button className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-blue-50 transition-all duration-300 whitespace-nowrap cursor-pointer text-lg">
             Get Free Consultation
-          </button>
+          </button> */}
         </div>
       </section>
     </div>

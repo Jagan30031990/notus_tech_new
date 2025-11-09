@@ -54,7 +54,7 @@ export default function CTASection() {
     {
       icon: 'ri-phone-line',
       title: 'Schedule a Call',
-      description: 'Speak directly with our experts to explore tailored solutions that fit your specific business needs and objectives.',
+      description: 'Speak directly with our experts to explore tailored solutions that fit your specific business needs and objectives or book a strategy call.',
       action: 'Book Strategy Call',
       href: '/contact',
       price: 'Free',
@@ -98,40 +98,10 @@ export default function CTASection() {
   return (
     <section 
       ref={sectionRef}
-      className="relative min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 overflow-hidden py-28"
+      className="relative min-h-screen bg-white overflow-hidden py-28"
     >
-      {/* Background elements matching homepage */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 right-20 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-indigo-400/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-r from-blue-500/15 to-cyan-500/15 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-r from-indigo-300/10 to-blue-300/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
-      </div>
+      
 
-      {/* Geometric shapes */}
-      <div className="absolute inset-0">
-        <div className="absolute top-32 left-16 w-20 h-20 bg-blue-500/15 rounded-2xl rotate-12 animate-pulse"></div>
-        <div className="absolute bottom-32 right-16 w-16 h-16 bg-indigo-600/15 rounded-xl rotate-45 animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 right-32 w-12 h-12 bg-blue-400/20 rounded-full animate-bounce"></div>
-        <div className="absolute top-1/4 left-1/4 w-8 h-8 bg-cyan-500/20 rounded-lg rotate-12 animate-pulse delay-500"></div>
-      </div>
-
-      {/* Blue themed floating particles with fixed positions */}
-      <div className="absolute inset-0">
-        {staticParticles.map((particle, index) => (
-          <div
-            key={index}
-            className="absolute animate-ping"
-            style={{
-              left: particle.left,
-              top: particle.top,
-              animationDelay: `${(index * 0.25 + 0.4) % 5}s`,
-              animationDuration: `${2 + ((index * 0.2) % 4)}s`
-            }}
-          >
-            <div className="w-1 h-1 rounded-full bg-blue-400/50"></div>
-          </div>
-        ))}
-      </div>
 
       <div className="relative max-w-7xl mx-auto px-3">
         {/* Section header with blue theme */}
@@ -269,11 +239,15 @@ export default function CTASection() {
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-12 text-blue-200">
                 <div className="flex items-center group/contact hover:text-blue-100 transition-colors duration-300">
                   <i className="ri-mail-line mr-3 group/contact:hover:animate-bounce"></i>
-                  <span>hello@techcraft.com</span>
+                  <span>info@notustechnologies.co.in</span>
                 </div>
                 <div className="flex items-center group/contact hover:text-blue-100 transition-colors duration-300">
                   <i className="ri-phone-line mr-3 group/contact:hover:animate-bounce"></i>
-                  <span>+1 (555) 123-4567</span>
+                  <span>+91 9911433392</span>
+                </div>
+                <div className="flex items-center group/contact hover:text-blue-100 transition-colors duration-300">
+                  <i className="ri-phone-line mr-3 group/contact:hover:animate-bounce"></i>
+                  <span>+91 8250983407</span>
                 </div>
                 <div className="flex items-center group/contact hover:text-blue-100 transition-colors duration-300">
                   <i className="ri-time-line mr-3 group/contact:hover:animate-bounce"></i>

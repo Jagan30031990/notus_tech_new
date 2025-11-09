@@ -73,9 +73,9 @@ export default function WhyChooseUs() {
             <p className="text-blue-100 mb-4 md:mb-6 max-w-2xl mx-auto text-sm md:text-base px-4">
               Join hundreds of satisfied clients who have transformed their businesses with our solutions
             </p>
-            <button className="bg-gradient-to-r from-indigo-600 to-blue-700 text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold hover:scale-105 transition-all duration-300 whitespace-nowrap cursor-pointer shadow-xl shadow-blue-500/25 text-sm md:text-base">
+            {/* <button className="bg-gradient-to-r from-indigo-600 to-blue-700 text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold hover:scale-105 transition-all duration-300 whitespace-nowrap cursor-pointer shadow-xl shadow-blue-500/25 text-sm md:text-base">
               Start Your Project Today
-            </button>
+            </button> */}
           </div>
         </div>
 

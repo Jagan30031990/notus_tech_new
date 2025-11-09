@@ -12,7 +12,7 @@ export default function BlogPage() {
       <Header />
       <BlogHero />
       <BlogGrid />
-      <BlogNewsletter />
+      {/* <BlogNewsletter /> */}
       <Footer />
     </div>
   );
