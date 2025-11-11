@@ -2,6 +2,7 @@
 'use client';
 
 import { useState } from 'react';
+import toast from 'react-hot-toast';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -13,6 +14,7 @@ export default function ContactForm() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -24,24 +26,40 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setShowSuccess(false);
+    setErrorMessage(null);
+
+    // Show loading toast
+    const loadingToast = toast.loading('Sending your message...');
 
     try {
-      const response = await fetch('https://readdy.ai/api/submit-form', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
+          'Content-Type': 'application/json',
         },
-        body: new URLSearchParams({
+        body: JSON.stringify({
           firstName: formData.firstName,
           lastName: formData.lastName,
           email: formData.email,
           phone: formData.phone,
           message: formData.message
-        }).toString()
+        })
       });
 
-      if (response.ok) {
+      const data = await response.json();
+
+      // Dismiss loading toast
+      toast.dismiss(loadingToast);
+
+      if (response.ok && data.success) {
+        // Show success toast with API message
+        toast.success(data.message || 'Your message has been sent successfully. We will get back to you soon!', {
+          duration: 5000,
+        });
+        
         setShowSuccess(true);
+        setErrorMessage(null);
         setFormData({
           firstName: '',
           lastName: '',
@@ -49,9 +67,31 @@ export default function ContactForm() {
           phone: '',
           message: ''
         });
+      } else {
+        // Show error toast with API error message
+        const errorMsg = data.errors && data.errors.length > 0 
+          ? data.errors.join('. ') 
+          : (data.message || 'Failed to send message. Please try again.');
+        
+        toast.error(errorMsg, {
+          duration: 5000,
+        });
+        
+        setErrorMessage(errorMsg);
       }
     } catch (error) {
       console.error('Error submitting form:', error);
+      
+      // Dismiss loading toast
+      toast.dismiss(loadingToast);
+      
+      // Show error toast
+      const errorMsg = 'An error occurred while sending your message. Please try again later.';
+      toast.error(errorMsg, {
+        duration: 5000,
+      });
+      
+      setErrorMessage(errorMsg);
     } finally {
       setIsSubmitting(false);
     }
@@ -100,6 +140,20 @@ export default function ContactForm() {
               <div>
                 <h3 className="font-semibold text-green-800 mb-1">Message Sent Successfully!</h3>
                 <p className="text-green-700">Thank you for reaching out. We'll get back to you soon.</p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {errorMessage && (
+          <div className="bg-gradient-to-r from-red-50 to-rose-50 border border-red-200 rounded-xl p-6 mb-8 shadow-sm">
+            <div className="flex items-center">
+              <div className="w-10 h-10 flex items-center justify-center bg-red-100 rounded-full mr-4">
+                <i className="ri-error-warning-line text-red-600 text-lg"></i>
+              </div>
+              <div>
+                <h3 className="font-semibold text-red-800 mb-1">Error Sending Message</h3>
+                <p className="text-red-700">{errorMessage}</p>
               </div>
             </div>
           </div>

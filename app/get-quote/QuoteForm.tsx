@@ -1,9 +1,14 @@
 'use client';
 
 import { useState } from 'react';
+import toast from 'react-hot-toast';
 
 export default function QuoteForm() {
   const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    company: '',
+    phone: '',
     projectType: '',
     budget: '',
     timeline: '',
@@ -11,18 +16,89 @@ export default function QuoteForm() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState('');
+  const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | ''>('');
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
+    setSubmitStatus('');
+    setErrorMessage(null);
+
+    // Show loading toast
+    const loadingToast = toast.loading('Submitting your quote request...');
+
+    try {
+      const response = await fetch('/api/quote', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          email: formData.email,
+          company: formData.company,
+          phone: formData.phone,
+          projectType: formData.projectType,
+          budget: formData.budget,
+          timeline: formData.timeline,
+          description: formData.description
+        })
+      });
+
+      const data = await response.json();
+
+      // Dismiss loading toast
+      toast.dismiss(loadingToast);
+
+      if (response.ok && data.success) {
+        // Show success toast with API message
+        toast.success(data.message || 'Your quote request has been submitted successfully. We will respond within 24 hours!', {
+          duration: 5000,
+        });
+        
+        setSubmitStatus('success');
+        setErrorMessage(null);
+        setFormData({
+          fullName: '',
+          email: '',
+          company: '',
+          phone: '',
+          projectType: '',
+          budget: '',
+          timeline: '',
+          description: ''
+        });
+      } else {
+        // Show error toast with API error message
+        const errorMsg = data.errors && data.errors.length > 0 
+          ? data.errors.join('. ') 
+          : (data.message || 'Failed to submit quote request. Please try again.');
+        
+        toast.error(errorMsg, {
+          duration: 5000,
+        });
+        
+        setSubmitStatus('error');
+        setErrorMessage(errorMsg);
+      }
+    } catch (error) {
+      console.error('Error submitting quote form:', error);
+      
+      // Dismiss loading toast
+      toast.dismiss(loadingToast);
+      
+      // Show error toast
+      const errorMsg = 'An error occurred while submitting your quote request. Please try again later.';
+      toast.error(errorMsg, {
+        duration: 5000,
+      });
+      
+      setSubmitStatus('error');
+      setErrorMessage(errorMsg);
+    } finally {
       setIsSubmitting(false);
-      setSubmitStatus('success');
-      setTimeout(() => setSubmitStatus(''), 3000);
-    }, 2000);
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -54,9 +130,30 @@ export default function QuoteForm() {
           <div className="lg:col-span-2">
             <form onSubmit={handleSubmit} className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-8 border border-blue-100">
               {submitStatus === 'success' && (
-                <div className="mb-8 bg-green-50 border border-green-200 rounded-xl p-4 flex items-center">
-                  <i className="ri-check-circle-line text-green-600 text-xl mr-3"></i>
-                  <span className="text-green-700">Quote request submitted successfully! We'll respond within 24 hours.</span>
+                <div className="mb-8 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-xl p-6 shadow-sm">
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 flex items-center justify-center bg-green-100 rounded-full mr-4">
+                      <i className="ri-check-line text-green-600 text-lg"></i>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-green-800 mb-1">Quote Request Submitted Successfully!</h3>
+                      <p className="text-green-700">We'll review your project details and respond within 24 hours.</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {submitStatus === 'error' && errorMessage && (
+                <div className="mb-8 bg-gradient-to-r from-red-50 to-rose-50 border border-red-200 rounded-xl p-6 shadow-sm">
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 flex items-center justify-center bg-red-100 rounded-full mr-4">
+                      <i className="ri-error-warning-line text-red-600 text-lg"></i>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-red-800 mb-1">Error Submitting Quote Request</h3>
+                      <p className="text-red-700">{errorMessage}</p>
+                    </div>
+                  </div>
                 </div>
               )}
 
@@ -66,6 +163,8 @@ export default function QuoteForm() {
                   <input
                     type="text"
                     name="fullName"
+                    value={formData.fullName}
+                    onChange={handleInputChange}
                     required
                     className="w-full px-4 py-3 rounded-xl border border-blue-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all"
                     placeholder="Your full name"
@@ -76,6 +175,8 @@ export default function QuoteForm() {
                   <input
                     type="email"
                     name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
                     required
                     className="w-full px-4 py-3 rounded-xl border border-blue-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all"
                     placeholder="your.email@company.com"
@@ -89,6 +190,8 @@ export default function QuoteForm() {
                   <input
                     type="text"
                     name="company"
+                    value={formData.company}
+                    onChange={handleInputChange}
                     className="w-full px-4 py-3 rounded-xl border border-blue-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all"
                     placeholder="Your company name"
                   />
@@ -98,6 +201,8 @@ export default function QuoteForm() {
                   <input
                     type="tel"
                     name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
                     className="w-full px-4 py-3 rounded-xl border border-blue-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all"
                     placeholder="+1 (555) 123-4567"
                   />
