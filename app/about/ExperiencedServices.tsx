@@ -94,7 +94,7 @@ export default function ExperiencedServices() {
               <i className="ri-phone-line text-violet-400 text-lg md:text-xl"></i>
               <div>
                 <div className="text-xs sm:text-sm text-blue-200">GET IN TOUCH</div>
-                <div className="text-white font-semibold text-xs sm:text-sm md:text-base">PHONE: +91-9914333902</div>
+                <div className="text-white font-semibold text-xs sm:text-sm md:text-base">PHONE: +91 9911433392</div>
               </div>
             </div>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-2 md:gap-3">

@@ -18,7 +18,7 @@ export default function AboutPage() {
       <TrustedSolutions />
       <MissionVision />
       <ManagedServices />
-      <TeamSection />
+      {/* <TeamSection /> */}
       <WhyChooseUs />
       <ExperiencedServices />
       <Footer />

@@ -124,8 +124,8 @@ export default function PrivacyPage() {
                 </div>
                 <div className="flex items-center">
                   <i className="ri-map-pin-line mr-3 text-blue-600"></i>
-                  <span>plot no 11, siyaram enclave, bhondsi, </span>
-                  <span>sohna road, gurgaon 122102, haryana, india</span>
+                  <span>Plot no 11, Siyaram enclave, Bhondsi, </span>
+                  <span> Sohna road, Gurgaon 122102, Haryana, India</span>
                 </div>
               </div>
             </div>

@@ -44,9 +44,9 @@ export default function ContactInfo() {
               <div>
                 <h4 className="text-xl font-bold text-gray-900 mb-2">Our Location</h4>
                 <div className="text-gray-600 leading-relaxed">
-                  <p className="font-medium">plot no 11, </p>
-                  <p>siyaram enclave, bhondsi</p>
-                  <p>sohna road, gurgaon 122102, haryana, india</p>
+                  <p className="font-medium">Plot no 11, </p>
+                  <p>Siyaram enclave, Bhondsi</p>
+                  <p>Sohna road, Gurgaon 122102, Haryana, India</p>
                   <p>Enclave Prashant Colony Road</p>
                   <p>Gurgaon-122102 Haryana</p>
                   <p className="font-medium text-blue-600">India</p>

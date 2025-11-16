@@ -144,9 +144,9 @@ export default function Footer() {
                 </div>
                 <div >
                   <div className="text-sm text-gray-400">Office</div>
-                  <div>plot no 11, </div>
-                  <div>siyaram enclave, bhondsi</div>
-                  <div>sohna road, gurgaon 122102, haryana, india</div>
+                  <div>Plot no 11, </div>
+                  <div>Siyaram enclave, Bhondsi</div>
+                  <div>Sohna road, Gurgaon 122102, Haryana, India</div>
                 </div>
               </div>
               <div className="flex items-center text-green-400">

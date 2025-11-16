@@ -56,8 +56,8 @@ export default function ContactMap() {
                 <div>
                   <h3 className="font-bold text-gray-900 mb-2">Notus Technologies</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    plot no 11, siyaram enclave, bhondsi<br />
-                    sohna road, gurgaon 122102, haryana, india<br />
+                    Plot no 11, Siyaram enclave, Bhondsi<br />
+                    Sohna road, Gurgaon 122102, Haryana, India<br />
                   </p>
                 </div>
               </div>
