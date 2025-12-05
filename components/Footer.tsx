@@ -21,16 +21,16 @@ export default function Footer() {
               Transforming businesses through innovative digital solutions, marketing expertise, and cutting-edge technology.
             </p>
             <div className="flex space-x-4">
-              <div className="w-10 h-10 flex items-center justify-center bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-cyan-600 hover:to-blue-600 rounded-full cursor-pointer transition-all duration-300">
+              <div onClick={()=>window.open("https://www.facebook.com/notustechnologies/", "_blank")} className="w-10 h-10 flex items-center justify-center bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-cyan-600 hover:to-blue-600 rounded-full cursor-pointer transition-all duration-300">
                 <i className="ri-facebook-fill text-lg"></i>
               </div>
-              <div className="w-10 h-10 flex items-center justify-center bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-cyan-600 hover:to-blue-600 rounded-full cursor-pointer transition-all duration-300">
-                <i className="ri-twitter-fill text-lg"></i>
+              <div onClick={()=>window.open("https://www.threads.com/@notus_technologies", "_blank")} className="w-10 h-10 flex items-center justify-center bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-cyan-600 hover:to-blue-600 rounded-full cursor-pointer transition-all duration-300">
+                <i className="ri-threads-line text-lg"></i>
               </div>
-              <div className="w-10 h-10 flex items-center justify-center bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-cyan-600 hover:to-blue-600 rounded-full cursor-pointer transition-all duration-300">
+              <div onClick={()=>window.open("https://www.linkedin.com/company/notustechnologies/", "_blank")} className="w-10 h-10 flex items-center justify-center bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-cyan-600 hover:to-blue-600 rounded-full cursor-pointer transition-all duration-300">
                 <i className="ri-linkedin-fill text-lg"></i>
               </div>
-              <div className="w-10 h-10 flex items-center justify-center bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-cyan-600 hover:to-blue-600 rounded-full cursor-pointer transition-all duration-300">
+              <div onClick={()=>window.open("https://www.instagram.com/notus_technologies/", "_blank")} className="w-10 h-10 flex items-center justify-center bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-cyan-600 hover:to-blue-600 rounded-full cursor-pointer transition-all duration-300">
                 <i className="ri-instagram-line text-lg"></i>
               </div>
             </div>
