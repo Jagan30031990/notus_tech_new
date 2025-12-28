@@ -58,8 +58,6 @@ const nextConfig: NextConfig = {
     }
     return config;
   },
-  // Reduce output size
-  output: 'standalone', // Creates a smaller output
 };
 
 export default nextConfig;
