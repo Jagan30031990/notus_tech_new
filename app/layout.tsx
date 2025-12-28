@@ -92,7 +92,7 @@ export const metadata: Metadata = {
     canonical: 'https://notustechnologies.co.in',
   },
   verification: {
-    google: 'JkSb-y_SWXjvoUa7AyC6ll81IOTnK2Cj-xYjqGsrKmg', // Update with your actual Google verification code
+    google: 'EwabHSoFwDZVL2IkoaHT0lReh3Z-I5fneC2uCr1sKAI',
   },
   category: 'Technology',
   icons: {

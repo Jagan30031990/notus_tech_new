@@ -22,6 +22,9 @@ export default function CustomMetaTags() {
       
       {/* Open Graph Locale (custom format) */}
       <meta property="og:locale" content="en-in" />
+      
+      {/* Google Site Verification */}
+      <meta name="google-site-verification" content="EwabHSoFwDZVL2IkoaHT0lReh3Z-I5fneC2uCr1sKAI" />
     </>
   );
 }
