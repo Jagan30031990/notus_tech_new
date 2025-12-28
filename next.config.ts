@@ -29,7 +29,7 @@ const nextConfig: NextConfig = {
       config.parallelism = 1; // Process one module at a time
       
       if (!isServer) {
-        // Limit chunk splitting to save memory
+        // Limit chunk splitting to save memory, but preserve CSS
         config.optimization = {
           ...config.optimization,
           minimize: true,
@@ -44,12 +44,21 @@ const nextConfig: NextConfig = {
                 priority: -20,
                 reuseExistingChunk: true,
               },
+              // Preserve CSS in separate chunks
+              styles: {
+                name: 'styles',
+                test: /\.(css|scss|sass)$/,
+                chunks: 'all',
+                enforce: true,
+                priority: 20,
+              },
               vendor: {
                 test: /[\\/]node_modules[\\/]/,
                 name: 'vendors',
                 priority: -10,
                 chunks: 'all',
-                maxSize: 200000, // 200KB max chunk size
+                // Don't limit vendor chunks too much to preserve CSS
+                maxSize: 500000, // Increased to 500KB
               },
             },
           },
