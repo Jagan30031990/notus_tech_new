@@ -7,7 +7,7 @@
     "build": "cross-env NODE_ENV=production NODE_OPTIONS=\"--max-old-space-size=2048\" next build",
     "build:low-memory": "cross-env NODE_ENV=production NODE_OPTIONS=\"--max-old-space-size=1536 --gc-interval=100\" next build",
     "build:monitor": "node scripts/monitor-build.js",
-    "start": "cross-env NODE_OPTIONS=\"--max-old-space-size=512\" next start -p 3000",
+    "start": "next start -p 3000",
     "lint": "next lint"
   },
   "dependencies": {
