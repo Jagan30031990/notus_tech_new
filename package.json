@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development next dev -H 0.0.0.0 -p 3000",
-    "build": "next build",
+    "build": "cross-env NODE_OPTIONS=\"--max-old-space-size=4096\" next build",
+    "build:monitor": "node scripts/monitor-build.js",
     "start": "next start -p 3000",
     "lint": "next lint"
   },
