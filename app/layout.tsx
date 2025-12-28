@@ -95,6 +95,11 @@ export const metadata: Metadata = {
     google: 'JkSb-y_SWXjvoUa7AyC6ll81IOTnK2Cj-xYjqGsrKmg', // Update with your actual Google verification code
   },
   category: 'Technology',
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
+  },
 };
 
 export default function RootLayout({
