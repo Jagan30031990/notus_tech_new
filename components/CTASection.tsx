@@ -239,7 +239,7 @@ export default function CTASection() {
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-12 text-blue-200">
                 <div className="flex items-center group/contact hover:text-blue-100 transition-colors duration-300">
                   <i className="ri-mail-line mr-3 group/contact:hover:animate-bounce"></i>
-                  <span>info@notustechnologies.co.in</span>
+                  <span>support@notustechnologies.co.in</span>
                 </div>
                 <div className="flex items-center group/contact hover:text-blue-100 transition-colors duration-300">
                   <i className="ri-phone-line mr-3 group/contact:hover:animate-bounce"></i>

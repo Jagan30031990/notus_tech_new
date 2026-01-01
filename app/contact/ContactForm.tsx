@@ -4,6 +4,14 @@
 import { useState } from 'react';
 import toast from 'react-hot-toast';
 
+interface FormErrors {
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+  phone?: string;
+  message?: string;
+}
+
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -12,19 +20,224 @@ export default function ContactForm() {
     phone: '',
     message: ''
   });
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
+  // Validation functions
+  const validateEmail = (email: string): boolean => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validatePhone = (phone: string): boolean => {
+    if (!phone) return true; // Phone is optional
+    // Extract only digits from the phone number
+    const digitsOnly = phone.replace(/\D/g, '');
+    // Check if it's exactly 10 digits
+    return digitsOnly.length === 10;
+  };
+
+  const validateField = (name: string, value: string): string | undefined => {
+    switch (name) {
+      case 'firstName':
+        if (!value.trim()) {
+          return 'First name is required';
+        }
+        if (value.trim().length < 2) {
+          return 'First name must be at least 2 characters';
+        }
+        if (value.trim().length > 50) {
+          return 'First name must not exceed 50 characters';
+        }
+        if (!/^[a-zA-Z\s'-]+$/.test(value.trim())) {
+          return 'First name can only contain letters, spaces, hyphens, and apostrophes';
+        }
+        return undefined;
+
+      case 'lastName':
+        if (!value.trim()) {
+          return 'Last name is required';
+        }
+        if (value.trim().length < 2) {
+          return 'Last name must be at least 2 characters';
+        }
+        if (value.trim().length > 50) {
+          return 'Last name must not exceed 50 characters';
+        }
+        if (!/^[a-zA-Z\s'-]+$/.test(value.trim())) {
+          return 'Last name can only contain letters, spaces, hyphens, and apostrophes';
+        }
+        return undefined;
+
+      case 'email':
+        if (!value.trim()) {
+          return 'Email address is required';
+        }
+        if (!validateEmail(value.trim())) {
+          return 'Please enter a valid email address';
+        }
+        // Check for common invalid email patterns
+        const emailParts = value.trim().split('@');
+        if (emailParts.length !== 2) {
+          return 'Please enter a valid email address';
+        }
+        const domain = emailParts[1].toLowerCase();
+        
+        // Check for invalid/test domains
+        const invalidDomains = ['example.com', 'test.com', 'invalid.com', 'domain.com', 'gggg.com', 'aaaa.com', 'test.test'];
+        if (invalidDomains.includes(domain)) {
+          return 'Please use a valid email domain';
+        }
+        
+        // Check domain format (must have valid TLD structure)
+        const domainRegex = /^[a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(\.[a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*\.[a-zA-Z]{2,}$/;
+        if (!domainRegex.test(domain)) {
+          return 'Please enter a valid email domain';
+        }
+        
+        // Check for suspicious patterns (all same characters, too short, etc.)
+        const domainWithoutTld = domain.split('.').slice(0, -1).join('.');
+        if (domainWithoutTld.length < 2) {
+          return 'Please enter a valid email domain';
+        }
+        
+        // Check if domain name looks suspicious (all same character repeated)
+        if (domainWithoutTld.length > 1 && /^(.)\1+$/.test(domainWithoutTld)) {
+          return 'Please use a valid email domain';
+        }
+        
+        return undefined;
+
+      case 'phone':
+        if (value) {
+          const digitsOnly = value.replace(/\D/g, '');
+          if (digitsOnly.length !== 10) {
+            return 'Phone number must be exactly 10 digits';
+          }
+        }
+        return undefined;
+
+      case 'message':
+        if (!value.trim()) {
+          return 'Message is required';
+        }
+        if (value.trim().length < 10) {
+          return 'Message must be at least 10 characters';
+        }
+        if (value.length > 500) {
+          return 'Message must not exceed 500 characters';
+        }
+        return undefined;
+
+      default:
+        return undefined;
+    }
+  };
+
+  const validateForm = (): boolean => {
+    const newErrors: FormErrors = {};
+    
+    Object.keys(formData).forEach((key) => {
+      const error = validateField(key, formData[key as keyof typeof formData]);
+      if (error) {
+        newErrors[key as keyof FormErrors] = error;
+      }
+    });
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const formatPhoneNumber = (value: string): string => {
+    // Remove all non-digit characters
+    const digitsOnly = value.replace(/\D/g, '');
+    
+    // Limit to 10 digits
+    const limitedDigits = digitsOnly.slice(0, 10);
+    
+    // Format as (XXX) XXX-XXXX
+    if (limitedDigits.length === 0) return '';
+    if (limitedDigits.length <= 3) return `(${limitedDigits}`;
+    if (limitedDigits.length <= 6) return `(${limitedDigits.slice(0, 3)}) ${limitedDigits.slice(3)}`;
+    return `(${limitedDigits.slice(0, 3)}) ${limitedDigits.slice(3, 6)}-${limitedDigits.slice(6)}`;
+  };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    
+    // Format phone number if it's the phone field
+    let processedValue = value;
+    if (name === 'phone') {
+      processedValue = formatPhoneNumber(value);
+    }
+    
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [name]: processedValue
     });
+
+    // Clear error when user starts typing
+    if (errors[name as keyof FormErrors]) {
+      setErrors({
+        ...errors,
+        [name]: undefined
+      });
+    }
+
+    // Real-time validation for message length
+    if (name === 'message' && value.length > 500) {
+      setErrors({
+        ...errors,
+        message: 'Message must not exceed 500 characters'
+      });
+    }
+  };
+
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    
+    setTouched({
+      ...touched,
+      [name]: true
+    });
+
+    const error = validateField(name, value);
+    if (error) {
+      setErrors({
+        ...errors,
+        [name]: error
+      });
+    } else {
+      setErrors({
+        ...errors,
+        [name]: undefined
+      });
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Mark all fields as touched
+    setTouched({
+      firstName: true,
+      lastName: true,
+      email: true,
+      phone: true,
+      message: true
+    });
+
+    // Validate form before submission
+    if (!validateForm()) {
+      toast.error('Please fix the errors in the form before submitting.', {
+        duration: 4000,
+      });
+      return;
+    }
+
     setIsSubmitting(true);
     setShowSuccess(false);
     setErrorMessage(null);
@@ -39,11 +252,11 @@ export default function ContactForm() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          firstName: formData.firstName,
-          lastName: formData.lastName,
-          email: formData.email,
-          phone: formData.phone,
-          message: formData.message
+          firstName: formData.firstName.trim(),
+          lastName: formData.lastName.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim(),
+          message: formData.message.trim()
         })
       });
 
@@ -60,6 +273,8 @@ export default function ContactForm() {
         
         setShowSuccess(true);
         setErrorMessage(null);
+        setErrors({});
+        setTouched({});
         setFormData({
           firstName: '',
           lastName: '',
@@ -172,14 +387,29 @@ export default function ContactForm() {
                   name="firstName"
                   value={formData.firstName}
                   onChange={handleChange}
+                  onBlur={handleBlur}
                   required
-                  className="w-full px-5 py-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm transition-all duration-300 group-hover:border-blue-300 bg-gray-50 focus:bg-white"
+                  className={`w-full px-5 py-4 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm transition-all duration-300 group-hover:border-blue-300 bg-gray-50 focus:bg-white ${
+                    errors.firstName && touched.firstName
+                      ? 'border-red-500 focus:ring-red-500'
+                      : 'border-gray-200'
+                  }`}
                   placeholder="Enter your first name"
                 />
                 <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
-                  <i className="ri-user-line text-gray-400 group-focus-within:text-blue-600"></i>
+                  <i className={`ri-user-line ${
+                    errors.firstName && touched.firstName
+                      ? 'text-red-500'
+                      : 'text-gray-400 group-focus-within:text-blue-600'
+                  }`}></i>
                 </div>
               </div>
+              {errors.firstName && touched.firstName && (
+                <p className="mt-2 text-sm text-red-600 flex items-center gap-1">
+                  <i className="ri-error-warning-line"></i>
+                  {errors.firstName}
+                </p>
+              )}
             </div>
             
             <div className="group">
@@ -193,14 +423,29 @@ export default function ContactForm() {
                   name="lastName"
                   value={formData.lastName}
                   onChange={handleChange}
+                  onBlur={handleBlur}
                   required
-                  className="w-full px-5 py-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm transition-all duration-300 group-hover:border-blue-300 bg-gray-50 focus:bg-white"
+                  className={`w-full px-5 py-4 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm transition-all duration-300 group-hover:border-blue-300 bg-gray-50 focus:bg-white ${
+                    errors.lastName && touched.lastName
+                      ? 'border-red-500 focus:ring-red-500'
+                      : 'border-gray-200'
+                  }`}
                   placeholder="Enter your last name"
                 />
                 <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
-                  <i className="ri-user-line text-gray-400 group-focus-within:text-blue-600"></i>
+                  <i className={`ri-user-line ${
+                    errors.lastName && touched.lastName
+                      ? 'text-red-500'
+                      : 'text-gray-400 group-focus-within:text-blue-600'
+                  }`}></i>
                 </div>
               </div>
+              {errors.lastName && touched.lastName && (
+                <p className="mt-2 text-sm text-red-600 flex items-center gap-1">
+                  <i className="ri-error-warning-line"></i>
+                  {errors.lastName}
+                </p>
+              )}
             </div>
           </div>
 
@@ -216,14 +461,29 @@ export default function ContactForm() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
+                  onBlur={handleBlur}
                   required
-                  className="w-full px-5 py-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm transition-all duration-300 group-hover:border-blue-300 bg-gray-50 focus:bg-white"
+                  className={`w-full px-5 py-4 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm transition-all duration-300 group-hover:border-blue-300 bg-gray-50 focus:bg-white ${
+                    errors.email && touched.email
+                      ? 'border-red-500 focus:ring-red-500'
+                      : 'border-gray-200'
+                  }`}
                   placeholder="Enter your email address"
                 />
                 <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
-                  <i className="ri-mail-line text-gray-400 group-focus-within:text-blue-600"></i>
+                  <i className={`ri-mail-line ${
+                    errors.email && touched.email
+                      ? 'text-red-500'
+                      : 'text-gray-400 group-focus-within:text-blue-600'
+                  }`}></i>
                 </div>
               </div>
+              {errors.email && touched.email && (
+                <p className="mt-2 text-sm text-red-600 flex items-center gap-1">
+                  <i className="ri-error-warning-line"></i>
+                  {errors.email}
+                </p>
+              )}
             </div>
             
             <div className="group">
@@ -237,13 +497,28 @@ export default function ContactForm() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-5 py-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm transition-all duration-300 group-hover:border-blue-300 bg-gray-50 focus:bg-white"
-                  placeholder="Enter your phone number"
+                  onBlur={handleBlur}
+                  className={`w-full px-5 py-4 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm transition-all duration-300 group-hover:border-blue-300 bg-gray-50 focus:bg-white ${
+                    errors.phone && touched.phone
+                      ? 'border-red-500 focus:ring-red-500'
+                      : 'border-gray-200'
+                  }`}
+                  placeholder="(123) 456-7890"
                 />
                 <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
-                  <i className="ri-phone-line text-gray-400 group-focus-within:text-blue-600"></i>
+                  <i className={`ri-phone-line ${
+                    errors.phone && touched.phone
+                      ? 'text-red-500'
+                      : 'text-gray-400 group-focus-within:text-blue-600'
+                  }`}></i>
                 </div>
               </div>
+              {errors.phone && touched.phone && (
+                <p className="mt-2 text-sm text-red-600 flex items-center gap-1">
+                  <i className="ri-error-warning-line"></i>
+                  {errors.phone}
+                </p>
+              )}
             </div>
           </div>
 
@@ -257,16 +532,33 @@ export default function ContactForm() {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
+                onBlur={handleBlur}
                 required
                 rows={6}
                 maxLength={500}
-                className="w-full px-5 py-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm resize-none transition-all duration-300 group-hover:border-blue-300 bg-gray-50 focus:bg-white"
+                className={`w-full px-5 py-4 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm resize-none transition-all duration-300 group-hover:border-blue-300 bg-gray-50 focus:bg-white ${
+                  errors.message && touched.message
+                    ? 'border-red-500 focus:ring-red-500'
+                    : 'border-gray-200'
+                }`}
                 placeholder="Tell us about your project requirements, questions, or how we can help you..."
               ></textarea>
-              <div className="absolute bottom-4 right-4 text-xs text-gray-500 bg-white px-2 py-1 rounded">
+              <div className={`absolute bottom-4 right-4 text-xs bg-white px-2 py-1 rounded ${
+                formData.message.length > 500
+                  ? 'text-red-500'
+                  : formData.message.length > 450
+                  ? 'text-yellow-500'
+                  : 'text-gray-500'
+              }`}>
                 {formData.message.length}/500
               </div>
             </div>
+            {errors.message && touched.message && (
+              <p className="mt-2 text-sm text-red-600 flex items-center gap-1">
+                <i className="ri-error-warning-line"></i>
+                {errors.message}
+              </p>
+            )}
           </div>
 
           <div className="pt-4">

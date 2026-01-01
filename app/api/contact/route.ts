@@ -1,5 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import dns from 'dns';
+import { promisify } from 'util';
+
+const resolveMx = promisify(dns.resolveMx);
+const resolve4 = promisify(dns.resolve4);
 
 // Type definitions for form data
 interface ContactFormData {
@@ -16,6 +21,67 @@ function isValidEmail(email: string): boolean {
   return emailRegex.test(email);
 }
 
+// Validate email domain by checking DNS records
+async function isValidEmailDomain(email: string): Promise<boolean> {
+  try {
+    const domain = email.split('@')[1];
+    if (!domain) return false;
+
+    // Check for common invalid/test domains
+    const invalidDomains = ['example.com', 'test.com', 'invalid.com', 'domain.com', 'test.test', 'gggg.com'];
+    if (invalidDomains.includes(domain.toLowerCase())) {
+      return false;
+    }
+
+    // Validate domain format first (must have valid TLD structure)
+    const domainRegex = /^[a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(\.[a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*\.[a-zA-Z]{2,}$/;
+    if (!domainRegex.test(domain)) {
+      return false;
+    }
+
+    // Try to resolve MX records first (preferred for email)
+    let hasValidRecords = false;
+    try {
+      const mxRecords = await resolveMx(domain);
+      if (mxRecords && mxRecords.length > 0) {
+        hasValidRecords = true;
+      }
+    } catch (mxError) {
+      // MX lookup failed, will try A record
+    }
+
+    // If MX records found, domain is valid
+    if (hasValidRecords) {
+      return true;
+    }
+
+    // If no MX records, try A record as fallback
+    try {
+      const aRecords = await resolve4(domain);
+      if (aRecords && aRecords.length > 0) {
+        return true;
+      }
+    } catch (aError) {
+      // A record lookup also failed
+    }
+
+    // Both MX and A record lookups failed - domain doesn't exist
+    console.warn(`Email domain validation failed: ${domain} does not have valid DNS records`);
+    return false;
+  } catch (error) {
+    console.error('Error validating email domain:', error);
+    // If there's an unexpected error, reject the domain to be safe
+    return false;
+  }
+}
+
+// Validate phone number (exactly 10 digits)
+function isValidPhone(phone: string): boolean {
+  if (!phone) return true; // Phone is optional
+  const digitsOnly = phone.replace(/\D/g, '');
+  return digitsOnly.length === 10;
+}
+
 // Sanitize input to prevent XSS
 function sanitizeInput(input: string): string {
   return input
@@ -28,7 +94,7 @@ function sanitizeInput(input: string): string {
 }
 
 // Validate form data
-function validateFormData(data: Partial<ContactFormData>): { isValid: boolean; errors: string[] } {
+async function validateFormData(data: Partial<ContactFormData>): Promise<{ isValid: boolean; errors: string[] }> {
   const errors: string[] = [];
 
   if (!data.firstName || data.firstName.trim().length < 2) {
@@ -41,6 +107,16 @@ function validateFormData(data: Partial<ContactFormData>): { isValid: boolean; e
 
   if (!data.email || !isValidEmail(data.email)) {
     errors.push('Please provide a valid email address');
+  } else {
+    // Validate email domain if email format is valid
+    const isDomainValid = await isValidEmailDomain(data.email);
+    if (!isDomainValid) {
+      errors.push('Please provide a valid email address with a valid domain');
+    }
+  }
+
+  if (data.phone && !isValidPhone(data.phone)) {
+    errors.push('Phone number must be exactly 10 digits');
   }
 
   if (!data.message || data.message.trim().length < 10) {
@@ -103,7 +179,7 @@ export async function POST(request: NextRequest) {
     };
 
     // Validate form data
-    const validation = validateFormData(formData);
+    const validation = await validateFormData(formData);
     if (!validation.isValid) {
       return NextResponse.json(
         {

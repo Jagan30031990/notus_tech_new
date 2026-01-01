@@ -115,7 +115,7 @@ export default function PrivacyPage() {
               <div className="space-y-3 text-gray-700">
                 <div className="flex items-center">
                   <i className="ri-mail-line mr-3 text-blue-600"></i>
-                  <span>info@notustechnologies.co.in</span>
+                  <span>support@notustechnologies.co.in</span>
                 </div>
                 <div className="flex items-center">
                   <i className="ri-phone-line mr-3 text-blue-600"></i>

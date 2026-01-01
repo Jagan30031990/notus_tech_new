@@ -125,7 +125,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <div className="text-sm text-gray-400">Email</div>
-                  <div>info@notustechnologies.co.in</div>
+                  <div>support@notustechnologies.co.in</div>
                 </div>
               </div>
               <div className="flex items-center text-gray-300">
