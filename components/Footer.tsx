@@ -125,7 +125,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <div className="text-sm text-gray-400">Email</div>
-                  <div>support@notustechnologies.co.in</div>
+                  <a href="mailto:support@notustechnologies.co.in" className="hover:text-cyan-400 transition-colors cursor-pointer">support@notustechnologies.co.in</a>
                 </div>
               </div>
               <div className="flex items-center text-gray-300">

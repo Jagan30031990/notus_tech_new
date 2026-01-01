@@ -237,10 +237,10 @@ export default function CTASection() {
 
               {/* Blue themed contact info */}
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-12 text-blue-200">
-                <div className="flex items-center group/contact hover:text-blue-100 transition-colors duration-300">
+                <a href="mailto:support@notustechnologies.co.in" className="flex items-center group/contact hover:text-blue-100 transition-colors duration-300 cursor-pointer">
                   <i className="ri-mail-line mr-3 group/contact:hover:animate-bounce"></i>
                   <span>support@notustechnologies.co.in</span>
-                </div>
+                </a>
                 <div className="flex items-center group/contact hover:text-blue-100 transition-colors duration-300">
                   <i className="ri-phone-line mr-3 group/contact:hover:animate-bounce"></i>
                   <span>+91 9911433392</span>

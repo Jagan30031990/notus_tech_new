@@ -295,18 +295,32 @@ Submitted at: ${new Date().toLocaleString()}
       { status: 200 }
     );
   } catch (error) {
+    // Log detailed error for debugging (only in production, console.error is kept)
     console.error('Error sending email:', error);
+    
+    // Log specific error details for troubleshooting
+    if (error instanceof Error) {
+      console.error('Error message:', error.message);
+      console.error('Error stack:', error.stack);
+      
+      // Check for SMTP configuration issues
+      if (error.message.includes('SMTP credentials') || error.message.includes('SMTP_USER') || error.message.includes('SMTP_PASSWORD')) {
+        console.error('SMTP Configuration Error: Missing SMTP credentials in environment variables');
+      }
+    }
 
     // Return user-friendly error message
-    let errorMessage = 'Failed to send message. Please try again later.';
+    let errorMessage = 'An error occurred while sending your message. Please try again later.';
     
     if (error instanceof Error) {
-      if (error.message.includes('SMTP credentials')) {
+      if (error.message.includes('SMTP credentials') || error.message.includes('SMTP_USER') || error.message.includes('SMTP_PASSWORD')) {
         errorMessage = 'Email service is not configured. Please contact the administrator.';
-      } else if (error.message.includes('timeout')) {
+      } else if (error.message.includes('timeout') || error.message.includes('ETIMEDOUT')) {
         errorMessage = 'Connection timeout. Please try again later.';
-      } else if (error.message.includes('authentication')) {
+      } else if (error.message.includes('authentication') || error.message.includes('Invalid login') || error.message.includes('535')) {
         errorMessage = 'Email authentication failed. Please contact the administrator.';
+      } else if (error.message.includes('ECONNREFUSED') || error.message.includes('ENOTFOUND')) {
+        errorMessage = 'Unable to connect to email server. Please try again later.';
       }
     }
 

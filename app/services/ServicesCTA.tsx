@@ -57,7 +57,7 @@ export default function ServicesCTA() {
                   <i className="ri-mail-line text-white text-xl"></i>
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">Email Us</h3>
-                <p className="text-blue-600 font-medium text-wrap">support@notustechnologies.co.in</p>
+                <a href="mailto:support@notustechnologies.co.in" className="text-blue-600 font-medium text-wrap hover:text-blue-700 transition-colors cursor-pointer block">support@notustechnologies.co.in</a>
               </div>
               
               {/* <div className="bg-white rounded-xl p-6 border border-blue-100 hover:border-blue-200 transition-colors">

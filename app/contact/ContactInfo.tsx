@@ -85,7 +85,7 @@ export default function ContactInfo() {
                 <h4 className="text-xl font-bold text-gray-900 mb-2">Email Support</h4>
                 <div className="flex items-center gap-2">
                   <i className="ri-mail-fill text-blue-600 text-sm"></i>
-                  <span className="text-gray-600 font-medium">support@notustechnologies.co.in</span>
+                  <a href="mailto:support@notustechnologies.co.in" className="text-gray-600 font-medium hover:text-blue-600 transition-colors cursor-pointer">support@notustechnologies.co.in</a>
                 </div>
                 <p className="text-sm text-gray-500 mt-1">We respond within 24 hours</p>
               </div>

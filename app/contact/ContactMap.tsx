@@ -114,7 +114,7 @@ export default function ContactMap() {
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">Email Us</h3>
             <p className="text-gray-600">Send us your requirements</p>
-            <p className="text-indigo-600 font-medium mt-1">support@notustechnologies.co.in</p>
+            <a href="mailto:support@notustechnologies.co.in" className="text-indigo-600 font-medium mt-1 hover:text-indigo-700 transition-colors cursor-pointer block">support@notustechnologies.co.in</a>
           </div>
 
           <div className="text-center group hover:scale-105 transition-transform duration-300">
