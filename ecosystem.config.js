@@ -2,17 +2,20 @@ module.exports = {
   apps: [
     {
       name: 'notus-tech',
-      script: 'npm',
-      args: 'start',
+      // CRITICAL FIX: Use direct node execution instead of npm start
+      // This eliminates extra process overhead (npm -> node -> next)
+      script: './node_modules/.bin/next',
+      args: 'start -p 3000',
       cwd: '/var/www/notus_tech_new',
       instances: 1, // Single instance to save memory
       exec_mode: 'fork',
-      // Memory management
-      max_memory_restart: '500M', // Restart if memory exceeds 500MB
+      // Memory management - INCREASED to prevent restart loops
+      max_memory_restart: '1.2G', // Increased from 500MB - Next.js needs more memory
       // Environment variables
       env: {
         NODE_ENV: 'production',
-        NODE_OPTIONS: '--max-old-space-size=512', // Limit runtime memory to 512MB
+        // Increased memory limit to match max_memory_restart
+        NODE_OPTIONS: '--max-old-space-size=1024', // Increased from 512MB to 1GB
         PORT: 3000,
       },
       // Logging
@@ -23,10 +26,14 @@ module.exports = {
       // Auto restart
       autorestart: true,
       watch: false,
-      // Resource limits
-      min_uptime: '10s',
-      max_restarts: 10,
-      restart_delay: 4000,
+      // Resource limits - PREVENT RESTART LOOPS
+      min_uptime: '30s', // Increased from 10s - give app time to stabilize
+      max_restarts: 5, // Reduced from 10 - prevent infinite restart loops
+      restart_delay: 5000, // Increased from 4000ms
+      // CPU throttling (if available on system)
+      kill_timeout: 5000,
+      wait_ready: true,
+      listen_timeout: 10000,
     },
   ],
 };

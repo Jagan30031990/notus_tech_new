@@ -3,8 +3,21 @@ import nodemailer from 'nodemailer';
 import dns from 'dns';
 import { promisify } from 'util';
 
+// DNS resolution with timeout wrapper
+function withTimeout<T>(promise: Promise<T>, timeoutMs: number): Promise<T> {
+  return Promise.race([
+    promise,
+    new Promise<T>((_, reject) =>
+      setTimeout(() => reject(new Error('DNS lookup timeout')), timeoutMs)
+    ),
+  ]);
+}
+
 const resolveMx = promisify(dns.resolveMx);
 const resolve4 = promisify(dns.resolve4);
+
+// DNS timeout in milliseconds (5 seconds max)
+const DNS_TIMEOUT = 5000;
 
 // Type definitions for form data
 interface ContactFormData {
@@ -39,15 +52,15 @@ async function isValidEmailDomain(email: string): Promise<boolean> {
       return false;
     }
 
-    // Try to resolve MX records first (preferred for email)
+    // Try to resolve MX records first (preferred for email) with timeout
     let hasValidRecords = false;
     try {
-      const mxRecords = await resolveMx(domain);
+      const mxRecords = await withTimeout(resolveMx(domain), DNS_TIMEOUT);
       if (mxRecords && mxRecords.length > 0) {
         hasValidRecords = true;
       }
     } catch (mxError) {
-      // MX lookup failed, will try A record
+      // MX lookup failed or timed out, will try A record
     }
 
     // If MX records found, domain is valid
@@ -55,14 +68,14 @@ async function isValidEmailDomain(email: string): Promise<boolean> {
       return true;
     }
 
-    // If no MX records, try A record as fallback
+    // If no MX records, try A record as fallback with timeout
     try {
-      const aRecords = await resolve4(domain);
+      const aRecords = await withTimeout(resolve4(domain), DNS_TIMEOUT);
       if (aRecords && aRecords.length > 0) {
         return true;
       }
     } catch (aError) {
-      // A record lookup also failed
+      // A record lookup also failed or timed out
     }
 
     // Both MX and A record lookups failed - domain doesn't exist

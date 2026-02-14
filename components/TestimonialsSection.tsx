@@ -34,7 +34,14 @@ export default function TestimonialsSection() {
   }, []);
 
   useEffect(() => {
+    let lastUpdate = 0;
+    const throttleDelay = 16; // ~60fps (16ms per frame)
+    
     const handleMouseMove = (e: MouseEvent) => {
+      const now = Date.now();
+      if (now - lastUpdate < throttleDelay) return;
+      lastUpdate = now;
+      
       if (sectionRef.current) {
         const rect = sectionRef.current.getBoundingClientRect();
         setMousePosition({ 
