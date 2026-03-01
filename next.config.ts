@@ -3,6 +3,10 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   // Removed static export to enable API routes
   // If you need static export, use a separate build config or deploy API routes separately
+
+  // Enforce consistent URL structure to prevent redirect loops
+  trailingSlash: false,
+
   images: {
     unoptimized: true,
   },
@@ -41,9 +45,9 @@ const nextConfig: NextConfig = {
             value: [
               "default-src 'self'",
               "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://maps.googleapis.com https://www.google.com https://www.gstatic.com",
-              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com",
               "img-src 'self' data: https: blob:",
-              "font-src 'self' data: https://fonts.gstatic.com",
+              "font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com",
               "connect-src 'self' https://maps.googleapis.com https://www.google.com https://readdy.ai https://*.readdy.ai",
               "frame-src 'self' https://www.google.com",
               "object-src 'none'",

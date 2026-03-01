@@ -42,13 +42,10 @@ export default function StructuredData() {
     "@type": "WebSite",
     "name": "Notus Technologies",
     "url": "https://notustechnologies.co.in",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://notustechnologies.co.in/search?q={search_term_string}"
-      },
-      "query-input": "required name=search_term_string"
+    "description": "Leading software development company in Gurgaon specializing in web development, mobile apps, cloud solutions, and digital marketing services.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Notus Technologies"
     }
   };
 

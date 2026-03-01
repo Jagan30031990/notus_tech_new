@@ -6,10 +6,11 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/admin/'],
+        disallow: ['/api/', '/admin/', '/sitemap'],
       },
     ],
     sitemap: 'https://notustechnologies.co.in/sitemap.xml',
+    host: 'https://notustechnologies.co.in',
   };
 }
 
