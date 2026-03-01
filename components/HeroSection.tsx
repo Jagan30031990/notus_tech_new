@@ -221,6 +221,10 @@ export default function HeroSection() {
                     src={HERO_IMAGE_URL}
                     alt="Professional business person"
                     className="w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] object-cover object-center rounded-lg md:rounded-xl hover:scale-110 transition-transform duration-700"
+                    loading="eager"
+                    fetchPriority="high"
+                    width={400}
+                    height={500}
                   />
 
                   {/* Enhanced decorative elements overlay */}

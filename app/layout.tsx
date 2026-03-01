@@ -111,6 +111,16 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning={true}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {/* Preconnect to external domains to reduce DNS/TLS handshake latency */}
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://static.readdy.ai" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://readdy.ai" crossOrigin="anonymous" />
+        {/* Load Remix Icon as a <link> instead of CSS @import to enable parallel loading */}
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.min.css"
+          crossOrigin="anonymous"
+        />
         <CustomMetaTags />
         <StructuredData />
       </head>

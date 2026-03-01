@@ -12,10 +12,14 @@ export default function Header() {
         <div className="flex justify-between items-center h-20">
           <Link href="/" className="flex items-center">
             <div className="flex items-center">
-              <img 
-                src="https://static.readdy.ai/image/0efc993ee4b8bc6e4e33939b16f3a514/6ce88bdb855be79e41b7a18b2e76c146.jfif" 
-                alt="Notus Technologies Logo" 
+              <img
+                src="https://static.readdy.ai/image/0efc993ee4b8bc6e4e33939b16f3a514/6ce88bdb855be79e41b7a18b2e76c146.jfif"
+                alt="Notus Technologies Logo"
                 className="h-10 w-auto"
+                loading="eager"
+                fetchPriority="high"
+                width={160}
+                height={40}
               />
             </div>
           </Link>
@@ -61,26 +65,27 @@ export default function Header() {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t">
             <nav className="space-y-4">
-              <Link href="/" className="block text-gray-700 hover:text-blue-600 transition-colors cursor-pointer">
+              <Link href="/" onClick={() => setIsMenuOpen(false)} className="block text-gray-700 hover:text-blue-600 transition-colors cursor-pointer">
                 Home
               </Link>
-              <Link href="/about" className="block text-gray-700 hover:text-blue-600 transition-colors cursor-pointer">
+              <Link href="/about" onClick={() => setIsMenuOpen(false)} className="block text-gray-700 hover:text-blue-600 transition-colors cursor-pointer">
                 About
               </Link>
-              <Link href="/services" className="block text-gray-700 hover:text-blue-600 transition-colors cursor-pointer">
+              <Link href="/services" onClick={() => setIsMenuOpen(false)} className="block text-gray-700 hover:text-blue-600 transition-colors cursor-pointer">
                 Services
               </Link>
-              <Link href="/portfolio" className="block text-gray-700 hover:text-blue-600 transition-colors cursor-pointer">
+              <Link href="/portfolio" onClick={() => setIsMenuOpen(false)} className="block text-gray-700 hover:text-blue-600 transition-colors cursor-pointer">
                 Portfolio
               </Link>
-              <Link href="/blog" className="block text-gray-700 hover:text-blue-600 transition-colors cursor-pointer">
+              <Link href="/blog" onClick={() => setIsMenuOpen(false)} className="block text-gray-700 hover:text-blue-600 transition-colors cursor-pointer">
                 Blog
               </Link>
-              <Link href="/contact" className="block text-gray-700 hover:text-blue-600 transition-colors cursor-pointer">
+              <Link href="/contact" onClick={() => setIsMenuOpen(false)} className="block text-gray-700 hover:text-blue-600 transition-colors cursor-pointer">
                 Contact
               </Link>
-              <Link 
+              <Link
                 href="/get-quote"
+                onClick={() => setIsMenuOpen(false)}
                 className="block w-full bg-gradient-to-r from-blue-600 to-violet-600 text-white px-6 py-2 rounded-full hover:scale-105 transition-all duration-300 whitespace-nowrap cursor-pointer text-center"
               >
                 Get Quote

@@ -1,13 +1,16 @@
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
-import StatsSection from '../components/StatsSection';
-import ServicesSection from '../components/ServicesSection';
-import WhyChooseSection from '../components/WhyChooseSection';
-import TestimonialsSection from '../components/TestimonialsSection';
-import FAQSection from '../components/FAQSection';
-import CTASection from '../components/CTASection';
-import Footer from '../components/Footer';
+
+// Lazy load below-fold sections to reduce initial bundle size and improve LCP
+const StatsSection = dynamic(() => import('../components/StatsSection'));
+const ServicesSection = dynamic(() => import('../components/ServicesSection'));
+const WhyChooseSection = dynamic(() => import('../components/WhyChooseSection'));
+const TestimonialsSection = dynamic(() => import('../components/TestimonialsSection'));
+const FAQSection = dynamic(() => import('../components/FAQSection'));
+const CTASection = dynamic(() => import('../components/CTASection'));
+const Footer = dynamic(() => import('../components/Footer'));
 
 export const metadata: Metadata = {
   title: "Best Information Technology Company in Gurgaon | Notus Technologies",
