@@ -128,15 +128,19 @@ function createTransporter() {
     transporter: nodemailer.createTransport({
       host: smtpHost,
       port: smtpPort,
-      secure: true, // true for 465, false for other ports
+      secure: smtpPort === 465,
       auth: {
         user: smtpUser,
         pass: smtpPassword,
       },
+      // Add timeout to prevent hanging requests
       connectionTimeout: 10000,
       greetingTimeout: 10000,
       socketTimeout: 10000,
-    }),
+      // Debug logging
+      logger: true,
+      debug: true,
+    } as nodemailer.TransportOptions),
     fromEmail: smtpFromEmail,
     recipientEmail,
   };
@@ -315,8 +319,10 @@ Reply to: ${sanitizedData.email}
 
     // Return user-friendly error message
     let errorMessage = 'An error occurred while submitting your quote request. Please try again later.';
+    let errorDetails = '';
     
     if (error instanceof Error) {
+      errorDetails = error.message;
       if (error.message.includes('SMTP credentials') || error.message.includes('SMTP_USER') || error.message.includes('SMTP_PASSWORD')) {
         errorMessage = 'Email service is not configured. Please contact the administrator.';
       } else if (error.message.includes('timeout') || error.message.includes('ETIMEDOUT')) {
@@ -332,6 +338,7 @@ Reply to: ${sanitizedData.email}
       {
         success: false,
         message: errorMessage,
+        debug_error: errorDetails, // Return actual error for debugging
       },
       { status: 500 }
     );
