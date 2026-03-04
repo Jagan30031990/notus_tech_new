@@ -38,15 +38,15 @@ export default function ServicesHero() {
         <div className="max-w-7xl mx-auto px-6 w-full">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
-            <div className="text-gray-900">
+            <div className="text-gray-900 relative z-10">
               <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-100 to-indigo-100 border border-blue-200 rounded-full mb-8">
                 <i className="ri-star-line text-blue-600 mr-2"></i>
                 <span className="text-sm font-semibold text-blue-700">Award-Winning Technology Solutions</span>
               </div>
               
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.3] md:leading-[1.25] mb-6 overflow-visible">
                 Transform Your
-                <span className="block bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 bg-clip-text text-transparent">
+                <span className="inline-block bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 bg-clip-text text-transparent px-1 pt-[2px] pb-[12px] md:pb-[14px] after:block after:content-[''] after:h-3 after:w-full">
                   Digital Future
                 </span>
               </h1>

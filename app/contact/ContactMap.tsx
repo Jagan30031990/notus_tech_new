@@ -64,7 +64,6 @@ export default function ContactMap() {
               <div className="flex items-center gap-2 mt-3">
                 <i className="ri-phone-line text-blue-600 text-sm"></i>
                 <span className="text-sm font-medium text-blue-600">+91 9911433392</span>
-                <span className="text-sm font-medium text-blue-600">+91 8250983407</span>
               </div>
             </div>
             

@@ -128,7 +128,6 @@ export default function TermsPage() {
                 <div className="flex items-center">
                   <i className="ri-phone-line mr-3 text-blue-600"></i>
                   <span>+91 9911433392,  </span>
-                  <span>+91 8250983407</span>
                 </div>
                 <div className="flex items-center">
                   <i className="ri-map-pin-line mr-3 text-blue-600"></i>

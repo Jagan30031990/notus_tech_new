@@ -67,10 +67,6 @@ export default function ContactInfo() {
                     <i className="ri-phone-fill text-indigo-600 text-sm"></i>
                     <span className="font-medium">+91 9911433392</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <i className="ri-phone-fill text-indigo-600 text-sm"></i>
-                    <span className="font-medium">+91 8250983407</span>
-                  </div>
                 </div>
               </div>
             </div>

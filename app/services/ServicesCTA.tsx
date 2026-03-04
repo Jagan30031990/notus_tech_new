@@ -49,7 +49,6 @@ export default function ServicesCTA() {
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">Call Us</h3>
                 <p className="text-blue-600 font-medium">+91 9911433392</p>
-                <p className="text-blue-600 font-medium">+91 8250983407</p>
               </div>
               
               <div className="bg-white rounded-xl p-6 border border-blue-100 hover:border-blue-200 transition-colors">

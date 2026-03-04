@@ -253,10 +253,6 @@ export default function CTASection() {
                   <span>+91 9911433392</span>
                 </div>
                 <div className="flex items-center group/contact hover:text-blue-100 transition-colors duration-300">
-                  <i className="ri-phone-line mr-3 group/contact:hover:animate-bounce"></i>
-                  <span>+91 8250983407</span>
-                </div>
-                <div className="flex items-center group/contact hover:text-blue-100 transition-colors duration-300">
                   <i className="ri-time-line mr-3 group/contact:hover:animate-bounce"></i>
                   <span>24/7 Expert Support</span>
                 </div>
