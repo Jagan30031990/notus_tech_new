@@ -1,11 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
-
-// Constants for repeated values
-const HERO_IMAGE_URL =
-  "https://readdy.ai/api/search-image?query=Professional%20confident%20business%20person%20in%20blue%20shirt%20pointing%20upward%20with%20positive%20expression%2C%20modern%20tech%20office%20background%20with%20blue%20lighting%2C%20clean%20corporate%20photography%20style%2C%20technology%20professional%20with%20laptop%20and%20digital%20devices%2C%20blue%20theme%20suitable%20for%20hero%20section&width=400&height=500&seq=hero-person-blue-v1&orientation=portrait";
+import { HERO_IMAGE_URL } from "@/lib/hero-image";
 
 const ANIMATION_DELAYS = {
   heading2: "0.2s",
@@ -111,7 +109,7 @@ const FloatingMetric = ({
   </div>
 );
 
-// Load hero image after mount so the external API doesn't block first paint / LCP
+// Load hero image with next/image for optimization and priority loading
 function HeroImage() {
   const [ready, setReady] = useState(false);
   useEffect(() => {
@@ -121,14 +119,15 @@ function HeroImage() {
   return (
     <div className={`w-full ${heightClass} rounded-lg md:rounded-xl overflow-hidden relative bg-gradient-to-br from-blue-100 to-indigo-100`}>
       {ready && (
-        <img
+        <Image
           src={HERO_IMAGE_URL}
           alt="Professional business person"
           className={`w-full ${heightClass} object-cover object-center hover:scale-110 transition-transform duration-700`}
           loading="eager"
-          decoding="async"
+          priority
           width={400}
           height={500}
+          sizes="(max-width: 768px) 100vw, 400px"
         />
       )}
     </div>

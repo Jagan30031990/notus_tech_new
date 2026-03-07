@@ -2,6 +2,9 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+
+const LOGO_URL = "https://static.readdy.ai/image/0efc993ee4b8bc6e4e33939b16f3a514/6ce88bdb855be79e41b7a18b2e76c146.jfif";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,14 +15,13 @@ export default function Header() {
         <div className="flex justify-between items-center h-20">
           <Link href="/" className="flex items-center">
             <div className="flex items-center">
-              <img
-                src="https://static.readdy.ai/image/0efc993ee4b8bc6e4e33939b16f3a514/6ce88bdb855be79e41b7a18b2e76c146.jfif"
+              <Image
+                src={LOGO_URL}
                 alt="Notus Technologies Logo"
                 className="h-10 w-auto"
-                loading="eager"
-                fetchPriority="high"
                 width={160}
                 height={40}
+                priority
               />
             </div>
           </Link>

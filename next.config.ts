@@ -8,7 +8,11 @@ const nextConfig: NextConfig = {
   trailingSlash: false,
 
   images: {
-    unoptimized: true,
+    unoptimized: false,
+    remotePatterns: [
+      { protocol: 'https', hostname: 'readdy.ai', pathname: '/api/search-image**' },
+      { protocol: 'https', hostname: 'static.readdy.ai', pathname: '/**' },
+    ],
   },
   typescript: {
     // ignoreBuildErrors: true,
