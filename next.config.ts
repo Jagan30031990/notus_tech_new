@@ -73,12 +73,12 @@ const nextConfig: NextConfig = {
       exclude: ['error', 'warn'],
     } : false,
   },
-  // Webpack optimizations to reduce memory usage during build
+  // Webpack: balance build speed vs memory. Default parallelism speeds up build.
+  // If the server runs out of memory during build, set env PARALLELISM=1.
   webpack: (config, { isServer, dev }) => {
-    // Optimize memory usage during build
     if (!dev) {
-      // Reduce parallel processing to save memory
-      config.parallelism = 1; // Process one module at a time
+      const parallelism = process.env.PARALLELISM ? parseInt(process.env.PARALLELISM, 10) : 4;
+      if (parallelism >= 1) config.parallelism = parallelism;
       
       if (!isServer) {
         // Limit chunk splitting to save memory

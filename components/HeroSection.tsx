@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
 // Constants for repeated values
 const HERO_IMAGE_URL =
@@ -110,6 +111,30 @@ const FloatingMetric = ({
   </div>
 );
 
+// Load hero image after mount so the external API doesn't block first paint / LCP
+function HeroImage() {
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    setReady(true);
+  }, []);
+  const heightClass = "h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px]";
+  return (
+    <div className={`w-full ${heightClass} rounded-lg md:rounded-xl overflow-hidden relative bg-gradient-to-br from-blue-100 to-indigo-100`}>
+      {ready && (
+        <img
+          src={HERO_IMAGE_URL}
+          alt="Professional business person"
+          className={`w-full ${heightClass} object-cover object-center hover:scale-110 transition-transform duration-700`}
+          loading="eager"
+          decoding="async"
+          width={400}
+          height={500}
+        />
+      )}
+    </div>
+  );
+}
+
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 overflow-hidden py-8 md:py-12 lg:py-5">
@@ -216,16 +241,8 @@ export default function HeroSection() {
               {/* Enhanced main image container */}
               <div className="relative bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105">
                 <div className="bg-white rounded-xl md:rounded-2xl p-4 md:p-6 lg:p-8 relative overflow-hidden">
-                  {/* Hero person image */}
-                  <img
-                    src={HERO_IMAGE_URL}
-                    alt="Professional business person"
-                    className="w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] object-cover object-center rounded-lg md:rounded-xl hover:scale-110 transition-transform duration-700"
-                    loading="eager"
-                    fetchPriority="high"
-                    width={400}
-                    height={500}
-                  />
+                  {/* Hero person image: load after mount to avoid blocking LCP on external API */}
+                  <HeroImage />
 
                   {/* Enhanced decorative elements overlay */}
                   <div className="absolute top-2 right-2 md:top-4 md:right-4 w-8 h-8 md:w-12 md:h-12 lg:w-16 lg:h-16 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-xl md:rounded-2xl opacity-30 animate-pulse"></div>

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Pacifico } from "next/font/google";
 import ToasterProvider from "@/components/ToasterProvider";
 import StructuredData from "@/components/StructuredData";
 import CustomMetaTags from "@/components/CustomMetaTags";
+import RemixIconLoader from "@/components/RemixIconLoader";
 import "./globals.css";
 
 const pacifico = Pacifico({
@@ -115,18 +116,14 @@ export default function RootLayout({
         <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://static.readdy.ai" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://readdy.ai" crossOrigin="anonymous" />
-        {/* Load Remix Icon as a <link> instead of CSS @import to enable parallel loading */}
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.min.css"
-          crossOrigin="anonymous"
-        />
+        {/* Remix Icon loaded async via RemixIconLoader to avoid blocking first paint */}
         <CustomMetaTags />
         <StructuredData />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${pacifico.variable} antialiased`}
       >
+        <RemixIconLoader />
         {children}
         <ToasterProvider />
       </body>
