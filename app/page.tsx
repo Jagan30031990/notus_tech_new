@@ -1,16 +1,16 @@
 import type { Metadata } from 'next';
-import dynamic from 'next/dynamic';
+import nextDynamic from 'next/dynamic';
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 
 // Lazy load below-fold sections to reduce initial bundle size and improve LCP
-const StatsSection = dynamic(() => import('../components/StatsSection'));
-const ServicesSection = dynamic(() => import('../components/ServicesSection'));
-const WhyChooseSection = dynamic(() => import('../components/WhyChooseSection'));
-const TestimonialsSection = dynamic(() => import('../components/TestimonialsSection'));
-const FAQSection = dynamic(() => import('../components/FAQSection'));
-const CTASection = dynamic(() => import('../components/CTASection'));
-const Footer = dynamic(() => import('../components/Footer'));
+const StatsSection = nextDynamic(() => import('../components/StatsSection'));
+const ServicesSection = nextDynamic(() => import('../components/ServicesSection'));
+const WhyChooseSection = nextDynamic(() => import('../components/WhyChooseSection'));
+const TestimonialsSection = nextDynamic(() => import('../components/TestimonialsSection'));
+const FAQSection = nextDynamic(() => import('../components/FAQSection'));
+const CTASection = nextDynamic(() => import('../components/CTASection'));
+const Footer = nextDynamic(() => import('../components/Footer'));
 
 export const metadata: Metadata = {
   title: "Best Information Technology Company in Gurgaon | Notus Technologies",
@@ -49,6 +49,9 @@ export const metadata: Metadata = {
     canonical: "https://notustechnologies.co.in",
   },
 };
+
+// Pre-render at build time so first request gets instant HTML (no SSR wait)
+export const dynamic = 'force-static';
 
 export default function Home() {
   return (

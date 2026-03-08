@@ -2,8 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
-import { HERO_IMAGE_URL } from "@/lib/hero-image";
+import { HERO_IMAGE_URL, HERO_IMAGE_BLUR } from "@/lib/hero-image";
 
 const ANIMATION_DELAYS = {
   heading2: "0.2s",
@@ -109,27 +108,23 @@ const FloatingMetric = ({
   </div>
 );
 
-// Load hero image with next/image for optimization and priority loading
+// Hero image: next/image with priority + blur placeholder so first paint shows layout immediately
 function HeroImage() {
-  const [ready, setReady] = useState(false);
-  useEffect(() => {
-    setReady(true);
-  }, []);
   const heightClass = "h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px]";
   return (
     <div className={`w-full ${heightClass} rounded-lg md:rounded-xl overflow-hidden relative bg-gradient-to-br from-blue-100 to-indigo-100`}>
-      {ready && (
-        <Image
-          src={HERO_IMAGE_URL}
-          alt="Professional business person"
-          className={`w-full ${heightClass} object-cover object-center hover:scale-110 transition-transform duration-700`}
-          loading="eager"
-          priority
-          width={400}
-          height={500}
-          sizes="(max-width: 768px) 100vw, 400px"
-        />
-      )}
+      <Image
+        src={HERO_IMAGE_URL}
+        alt="Professional business person"
+        className={`w-full ${heightClass} object-cover object-center hover:scale-110 transition-transform duration-700`}
+        loading="eager"
+        priority
+        width={400}
+        height={500}
+        sizes="(max-width: 768px) 100vw, 400px"
+        placeholder="blur"
+        blurDataURL={HERO_IMAGE_BLUR}
+      />
     </div>
   );
 }
