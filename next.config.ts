@@ -1,9 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Removed static export to enable API routes
-  // If you need static export, use a separate build config or deploy API routes separately
-
   // Enforce consistent URL structure to prevent redirect loops
   trailingSlash: false,
 
@@ -17,6 +14,10 @@ const nextConfig: NextConfig = {
   typescript: {
     // ignoreBuildErrors: true,
   },
+
+  // Turbopack configuration (default bundler in Next.js 16)
+  turbopack: {},
+
   // Security headers
   async headers() {
     return [
@@ -76,43 +77,6 @@ const nextConfig: NextConfig = {
     removeConsole: process.env.NODE_ENV === 'production' ? {
       exclude: ['error', 'warn'],
     } : false,
-  },
-  // Webpack: balance build speed vs memory. Default parallelism speeds up build.
-  // If the server runs out of memory during build, set env PARALLELISM=1.
-  webpack: (config, { isServer, dev }) => {
-    if (!dev) {
-      const parallelism = process.env.PARALLELISM ? parseInt(process.env.PARALLELISM, 10) : 4;
-      if (parallelism >= 1) config.parallelism = parallelism;
-      
-      if (!isServer) {
-        // Limit chunk splitting to save memory
-        config.optimization = {
-          ...config.optimization,
-          minimize: true,
-          splitChunks: {
-            ...config.optimization.splitChunks,
-            chunks: 'all',
-            maxAsyncRequests: 5, // Reduced from 20
-            maxInitialRequests: 5, // Reduced from 20
-            cacheGroups: {
-              default: {
-                minChunks: 2,
-                priority: -20,
-                reuseExistingChunk: true,
-              },
-              vendor: {
-                test: /[\\/]node_modules[\\/]/,
-                name: 'vendors',
-                priority: -10,
-                chunks: 'all',
-                maxSize: 500000, // 500KB max chunk size
-              },
-            },
-          },
-        };
-      }
-    }
-    return config;
   },
 };
 
